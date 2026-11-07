@@ -1,0 +1,51 @@
+/* Challenge */
+.ch-hero { text-align: center; padding: var(--sp-5) 0; }
+.ch-hero .icon { width: 64px; height: 64px; color: var(--brand); stroke-width: 1.4; }
+.ch-runbar { display: flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-4); flex-wrap: wrap; }
+.ch-runbar .progress { flex: 1; min-width: 120px; }
+.ch-timer { font-family: var(--font-mono); font-weight: 700; }
+.ch-timer.low { color: var(--danger); }
+.result-hero { text-align: center; padding: var(--sp-5) 0; position: relative; }
+.result-hero .ring { margin: 0 auto var(--sp-3); }
+.verdict { font-size: var(--fs-2xl); display: inline-flex; gap: var(--sp-2); align-items: center; }
+.verdict.pass { color: var(--success); } .verdict.fail { color: var(--danger); }
+.stats-line { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-4); font-size: var(--fs-sm); }
+.lesson-card { border-left: 4px solid var(--success); }
+.lesson-card.wrong { border-left-color: var(--danger); }
+.lesson-card.partial { border-left-color: var(--warning); }
+.lesson-card h3 { display: flex; gap: var(--sp-2); align-items: center; font-size: var(--fs-md); }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-1) var(--sp-3); font-size: var(--fs-sm); margin: var(--sp-2) 0; }
+.kv dt { color: var(--text-muted); } .kv dd { margin: 0; }
+.history { list-style: none; padding: 0; }
+.history li { display: flex; justify-content: space-between; gap: var(--sp-2); padding: var(--sp-2) 0; border-bottom: 1px solid var(--border); font-size: var(--fs-sm); }
+.sparkline { display: block; width: 100%; max-width: 320px; height: 48px; }
+.sparkline polyline { fill: none; stroke: var(--brand); stroke-width: 2; }
+.sparkline line { stroke: var(--border); stroke-dasharray: 3 3; }
+.confetti-layer { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.confetti-bit { position: absolute; top: -12px; width: 8px; height: 12px; border-radius: 2px; }
+@media (prefers-reduced-motion: no-preference) {
+  .confetti-bit { animation: fall 1.6s var(--ease) forwards; }
+  @keyframes fall { to { transform: translateY(420px) rotate(540deg); opacity: 0; } }
+}
+.share-preview { max-width: 100%; border-radius: var(--r-md); border: 1px solid var(--border); }
+
+/* Radar */
+.radar-tools { padding: var(--sp-3) var(--sp-4); border-bottom: 1px solid var(--border); display: grid; gap: var(--sp-3); }
+.trending { display: flex; gap: var(--sp-2); overflow-x: auto; padding-bottom: var(--sp-1); }
+.trend { flex: none; background: var(--surface-2); border-radius: var(--r-md); padding: var(--sp-2) var(--sp-3); font-size: var(--fs-xs); }
+.trend b { display: block; font-size: var(--fs-lg); }
+
+/* Learn */
+.learn-grid { display: grid; gap: var(--sp-3); grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.learn-tile { display: block; text-decoration: none; color: var(--text); }
+.learn-tile:hover { border-color: var(--brand); color: var(--text); }
+.learn-tile h2 { font-size: var(--fs-md); margin-bottom: var(--sp-1); }
+.learn-section { margin-top: var(--sp-5); }
+.learn-section h2 { font-size: var(--fs-lg); display: flex; gap: var(--sp-2); align-items: center; }
+
+/* Hooked checklist */
+.check-item { display: flex; gap: var(--sp-3); align-items: flex-start; padding: var(--sp-2) 0; min-height: 44px; cursor: pointer; }
+.check-item input { width: 22px; height: 22px; margin-top: 2px; accent-color: var(--success); flex: none; }
+.check-item input:checked + span { color: var(--text-muted); text-decoration: line-through; }
+.situations { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-4); }
+.no-shame { background: var(--success-soft); border: 1px solid var(--success); border-radius: var(--r-lg); padding: var(--sp-4); }
