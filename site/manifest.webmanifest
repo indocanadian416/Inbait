@@ -1,0 +1,5 @@
+{ "name": "Inbait", "short_name": "Inbait", "start_url": "./", "scope": "./", "display": "standalone",
+  "theme_color": "#1D5FBF", "background_color": "#F4F6F9",
+  "icons": [ { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+             { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+             { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" } ] }
