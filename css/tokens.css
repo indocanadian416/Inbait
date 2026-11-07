@@ -1,0 +1,58 @@
+/* Inbait design tokens. All colours live here. */
+:root {
+  --bg: #F4F6F9; --surface: #FFFFFF; --surface-2: #EEF1F5; --surface-3: #E3E8EF; --border: #D9DEE5;
+  --text: #1A1F26; --text-muted: #5A6472;
+  --brand: #1D5FBF; --brand-hover: #174E9E; --brand-soft: #E3EDFB;
+  --danger: #C4314B; --danger-soft: #FBE7EA;
+  --warning: #975A00; /* adjusted from #B26B00 to meet 4.5:1 */
+  --warning-soft: #FFF3DC;
+  --success: #0F7B3F; --success-soft: #E2F4EA;
+  --focus: #1D5FBF; --unread-dot: #1D5FBF;
+  --on-brand: #FFFFFF; --on-danger: #FFFFFF; --on-success: #FFFFFF;
+  --overlay: rgba(10, 14, 20, .45);
+  --av-1: #1D5FBF; --av-2: #0F7B3F; --av-3: #8A3FB8; --av-4: #B03A2E; --av-5: #00707A; --av-6: #8A5A00; --av-7: #4A55A2; --av-8: #A3306B;
+  --av-text: #FFFFFF;
+
+  --font-sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --fs-xs: 0.75rem; --fs-sm: 0.875rem; --fs-md: 1rem; --fs-lg: 1.125rem; --fs-xl: 1.375rem; --fs-2xl: 1.75rem; --fs-3xl: 2.25rem;
+  --lh-body: 1.5; --lh-head: 1.25;
+
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+  --r-sm: 6px; --r-md: 10px; --r-lg: 16px; --r-pill: 999px;
+  --sh-1: 0 1px 2px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.08);
+  --sh-2: 0 4px 12px rgba(0,0,0,.12);
+  --sh-3: 0 12px 32px rgba(0,0,0,.18);
+  --ease: cubic-bezier(.2,.8,.2,1); --dur-fast: 120ms; --dur: 200ms; --dur-slow: 320ms;
+
+  --topbar-h: 52px; --rail-w: 56px; --folders-w: 232px; --list-w: 380px; --bottomnav-h: 60px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --bg: #0E1116; --surface: #161A21; --surface-2: #1C212A; --surface-3: #252C37; --border: #2B3340;
+    --text: #E6EAF0; --text-muted: #98A3B3;
+    --brand: #5B9BF0; --brand-hover: #7AAFF4; --brand-soft: #1B2B44;
+    --danger: #F0677F; --danger-soft: #3A1A22; --warning: #F2B04A; --warning-soft: #3A2A10;
+    --success: #4CC38A; --success-soft: #12301F; --focus: #7AAFF4; --unread-dot: #5B9BF0;
+    --on-brand: #0E1116; --on-danger: #0E1116; --on-success: #0E1116;
+    --overlay: rgba(0, 0, 0, .6);
+    --sh-1: 0 1px 2px rgba(0,0,0,.096), 0 1px 3px rgba(0,0,0,.128);
+    --sh-2: 0 4px 12px rgba(0,0,0,.192);
+    --sh-3: 0 12px 32px rgba(0,0,0,.288);
+    color-scheme: dark;
+  }
+}
+html[data-theme="dark"] {
+  --bg: #0E1116; --surface: #161A21; --surface-2: #1C212A; --surface-3: #252C37; --border: #2B3340;
+  --text: #E6EAF0; --text-muted: #98A3B3;
+  --brand: #5B9BF0; --brand-hover: #7AAFF4; --brand-soft: #1B2B44;
+  --danger: #F0677F; --danger-soft: #3A1A22; --warning: #F2B04A; --warning-soft: #3A2A10;
+  --success: #4CC38A; --success-soft: #12301F; --focus: #7AAFF4; --unread-dot: #5B9BF0;
+  --on-brand: #0E1116; --on-danger: #0E1116; --on-success: #0E1116;
+  --overlay: rgba(0, 0, 0, .6);
+  --sh-1: 0 1px 2px rgba(0,0,0,.096), 0 1px 3px rgba(0,0,0,.128);
+  --sh-2: 0 4px 12px rgba(0,0,0,.192);
+  --sh-3: 0 12px 32px rgba(0,0,0,.288);
+  color-scheme: dark;
+}
