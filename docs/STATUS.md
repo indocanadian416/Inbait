@@ -1,6 +1,6 @@
 # Inbait – project status and handoff
 
-Last updated: 2026-11-07
+Last updated: 2026-11-08
 
 ## What Inbait is
 A public, static security-awareness website styled as a mail client. People learn to spot
@@ -30,14 +30,16 @@ or save it as `docs/BRIEF.md`.
   `modules/practice.js` (list + reading pane + feedback loop), `inbox.js` (welcome email + result emails),
   `calls.js`, `chat.js`, `browser.js`, `texts.js`
 - Content files exist but are empty arrays (`site/content/*.json`, `site/data/*.json`)
-- Placeholder "coming soon" modules: challenge, radar, learn, hooked, about
+- About page (privacy, disclaimer, theme, reset progress, license) and Got Hooked? checklist (6 situations, ticks saved locally)
+- `sw.js` (cache `inbait-v2`), `robots.txt`, `sitemap.xml`
+- Placeholder "coming soon" modules: challenge, radar, learn
 
 ## Not done yet
 - Scenario content: emails, calls, chats, browser, texts, challenge pool, Learn topics
 - Challenge engine (draws, scoring, verdicts, results page, share card, history)
 - Hook Radar page + `scripts/fetch_feed.py`, `sources.json`, `keywords.json`
-- Learn, Got Hooked?, About pages
-- `sw.js`, `robots.txt`, `sitemap.xml`
+- Learn page
+- About page: add Hook Radar source credits once Radar exists
 - `scripts/validate_content.py`, `.github/workflows/pages.yml`
 - README, `docs/CONTENT_GUIDE.md`, SECURITY.md, CONTRIBUTING.md
 - Section 16 acceptance tests, PR into `main`
