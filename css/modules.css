@@ -49,3 +49,6 @@
 .check-item input:checked + span { color: var(--text-muted); text-decoration: line-through; }
 .situations { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-4); }
 .no-shame { background: var(--success-soft); border: 1px solid var(--success); border-radius: var(--r-lg); padding: var(--sp-4); }
+.lead { font-size: var(--fs-lg); }
+.card h2 { display: flex; gap: var(--sp-2); align-items: center; font-size: var(--fs-lg); }
+.no-shame { margin: var(--sp-4) 0; display: flex; gap: var(--sp-2); align-items: center; flex-wrap: wrap; }
