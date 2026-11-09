@@ -1,1 +1,54 @@
-[]
+[
+  {
+    "id": "t-parcel-fee",
+    "technique": "smishing",
+    "is_phish": true,
+    "contact_name": "Unknown sender",
+    "contact_number": "+1 (800) 555-0182",
+    "messages": [
+      { "from": "them", "text": "NorthPost: Your package could not be delivered due to an incorrect street address format. To schedule redelivery, please confirm your details and pay the $1.25 handling fee immediately: https://northpost-parcel-update-2026.example/track", "time": "09:14" }
+    ],
+    "prompt": "A text arrives about a parcel. What do you do?",
+    "choices": [
+      { "label": "Open the link and pay the $1.25 fee", "correct": false },
+      { "label": "Delete it and check the carrier's real site myself", "correct": true },
+      { "label": "Reply to ask if it's really from the courier", "risk": "risky" }
+    ],
+    "red_flags": [
+      { "n": 1, "title": "Unsolicited Delivery Notice", "explanation": "Targets common consumer behaviors with low-cost lures ($1.25 fee) to harvest credit card data and billing details.", "target": "msg-1" },
+      { "n": 2, "title": "Typosquatted URL", "explanation": "Uses a non-official external domain imitating a postal carrier.", "target": "msg-1" }
+    ],
+    "what_to_do": [
+      "Do not pay 'fees' or enter card details from an unexpected delivery text.",
+      "If you are expecting a parcel, track it on the carrier's official app or website that you open yourself.",
+      "Delete the message, and at work, report it."
+    ],
+    "lesson": "A small 'handling fee' plus a link is a cheap lure to capture your card and billing details."
+  },
+  {
+    "id": "t-vpn-code",
+    "technique": "genuine-2fa-codes",
+    "is_phish": false,
+    "contact_name": "CorporateID",
+    "contact_number": "Verified A2P sender",
+    "messages": [
+      { "from": "them", "text": "Your corporate VPN verification code is 849204. Valid for 5 minutes. Do not share this code with anyone, including IT support.", "time": "14:02" }
+    ],
+    "prompt": "This code arrives while you are signing in to the VPN. What do you do?",
+    "choices": [
+      { "label": "Use it to finish the login I just started", "correct": true },
+      { "label": "Read it out to the helpdesk agent who called", "correct": false },
+      { "label": "Ignore it — codes like this are always scams", "risk": "risky" }
+    ],
+    "safe_reasons": [
+      "Registered Shortcode: Sent via an established, locked Application-to-Person (A2P) enterprise SMS sender ID.",
+      "Security Reminder: Explicitly warns the recipient never to share the code, reflecting standard organizational security policies."
+    ],
+    "what_to_do": [
+      "Only enter a one-time code into a login you started yourself, right now.",
+      "Never read a code aloud or forward it, even to someone claiming to be IT.",
+      "If a code arrives when you were not signing in, treat it as a warning that someone may have your password."
+    ],
+    "lesson": "A one-time code is yours alone. Genuine senders tell you never to share it."
+  }
+]

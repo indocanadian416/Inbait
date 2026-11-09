@@ -1,7 +1,47 @@
 [
   {
+    "slug": "lookalike-domains",
+    "title": "Lookalike and typo-squatted domains",
+    "summary": "Attackers register domains that resemble a brand or your employer (extra words, swapped letters, odd top-level domains) so a sender address or link looks almost right at a glance. Always read the real domain carefully, and remember that the padlock only means the connection is encrypted, not that the site is trustworthy."
+  },
+  {
+    "slug": "executive-impersonation",
+    "title": "Executive impersonation and wire fraud",
+    "summary": "In business email compromise, a message posing as an executive pressures you to move money or data fast, in secret, and outside normal controls. No genuine leader asks you to bypass finance checks or keep a payment hidden. Verify any payment request out of band, on a number or channel you already trust."
+  },
+  {
+    "slug": "credential-harvesting",
+    "title": "Fake logins and MFA re-registration",
+    "summary": "Credential-harvesting emails imitate IT or security and push you to 're-verify', 'sync', or 'confirm' your account through a link, often with a lockout countdown. The link leads to a clone of your sign-in page. Never re-register MFA or sign in from an email link; open your real portal the way you normally do."
+  },
+  {
+    "slug": "malicious-attachments",
+    "title": "Dangerous email attachments",
+    "summary": "Unexpected attachments such as .iso, .img, .zip, .exe or script files can carry malware designed to slip past email filters and run on your machine. Treat any surprise 'invoice', 'license' or 'agreement' attachment with suspicion, and open only safe, expected document formats from people you trust."
+  },
+  {
     "slug": "genuine-internal-mail",
     "title": "Spotting genuine internal mail",
     "summary": "Legitimate internal messages come from your real corporate domain, point you to official channels you already know (an internal wiki, a named Slack channel, a status page), use safe document formats such as .pdf, and never pressure you to enter credentials, reset a password, or act in secret. When a message asks for none of your secrets and gives you a normal way to check, that is a good sign. Still verify anything unexpected through a channel you already trust rather than a link in the message itself."
+  },
+  {
+    "slug": "smishing",
+    "title": "Scam texts (smishing)",
+    "summary": "Smishing is phishing by SMS: fake delivery notices, bank alerts or prize claims that use a small fee or a scare to get you onto a lookalike site and enter card or login details. If you did not start the interaction, do not tap the link; go to the real app or website yourself."
+  },
+  {
+    "slug": "genuine-2fa-codes",
+    "title": "Genuine one-time codes",
+    "summary": "A real one-time or 2FA code is meant only for a login you started yourself, and legitimate senders explicitly tell you never to share it, not even with IT. A code arriving when you were not signing in is a warning that someone may already have your password."
+  },
+  {
+    "slug": "fake-helpdesk",
+    "title": "Impostor IT helpdesk",
+    "summary": "Attackers pose as IT support in chat or on calls, often from an external or unverified account, and use fear of an account lockout to rush you into clicking a link or handing over access. Verify through the helpdesk channel or number you already know, and never trust a security link from an unexpected 'support' contact."
+  },
+  {
+    "slug": "genuine-team-chat",
+    "title": "Normal team collaboration",
+    "summary": "Everyday work messages reference specific, real work (branches, pull requests, tickets), come from known teammates, and do not rush you or ask for credentials. Recognising what normal looks like makes the abnormal — urgency, secrecy, out-of-place links — easier to spot."
   }
 ]
