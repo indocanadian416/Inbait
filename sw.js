@@ -1,5 +1,5 @@
 // Inbait service worker: cache-first for static files, network-first for the news feed.
-const VERSION = 'inbait-v4';
+const VERSION = 'inbait-v5';
 const STATIC = [
   './', 'index.html', 'manifest.webmanifest',
   'css/tokens.css', 'css/base.css', 'css/layout.css', 'css/components.css', 'css/modules.css', 'css/print.css',
@@ -13,7 +13,7 @@ const STATIC = [
 ];
 const NETWORK_FIRST = /\/(data\/feed(-meta)?\.json|content\/[^/]+\.json)$/;
 
-self.addEventListener('install', (e) => { e.waitUntil(caches.open(VERSION).then((c) => c.addAll(STATIC))); });
+self.addEventListener('install', (e) => { self.skipWaiting(); e.waitUntil(caches.open(VERSION).then((c) => c.addAll(STATIC))); });
 self.addEventListener('activate', (e) => {
   e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== VERSION).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
 });
