@@ -75,7 +75,7 @@
     "technique": "genuine-internal-mail",
     "is_phish": false,
     "from_name": "HR Announcements",
-    "from_address": "hr-announcements@internal.yourcompany.com",
+    "from_address": "hr-announcements@brightlinecorp.example",
     "to": "you@brightlinecorp.example",
     "date_label": "9 Nov 2026",
     "subject": "Updated Remote Work Expense Guidelines for Q4",
@@ -83,7 +83,7 @@
     "attachments": [{ "name": "Q4_Expense_Guidelines_2026.pdf", "size": "214 KB" }],
     "body_html": "<p>Hi Everyone,</p>\n<p>Please review the updated Q4 remote work and office equipment expense policy attached to this email. The internal finance wiki has also been updated with the new submission codes. If you have any questions, reach out via our internal Slack channel <code>#hr-support</code>.</p>",
     "safe_reasons": [
-      "Internal Domain Alignment: Sent entirely from the verified internal corporate domain (internal.yourcompany.com).",
+      "Internal Domain Alignment: Sent entirely from the verified internal corporate domain (brightlinecorp.example).",
       "Standard Document Format: Uses a safe, non-executable document format (.pdf) rather than scripts or ISOs.",
       "Alternative Contact Channels: Directs inquiries to an official internal communication channel rather than demanding immediate external action."
     ],
@@ -99,12 +99,12 @@
     "technique": "genuine-internal-mail",
     "is_phish": false,
     "from_name": "NOC Operations",
-    "from_address": "noc-ops@internal.yourcompany.com",
+    "from_address": "noc-ops@brightlinecorp.example",
     "to": "you@brightlinecorp.example",
     "date_label": "7 Nov 2026",
     "subject": "Scheduled Maintenance: VPN Gateway Upgrades This Sunday",
     "preview": "Our Network Operations Center will perform scheduled maintenance on our primary VPN gateways this Sunday from 02:00 to 04:00 EST.",
-    "body_html": "<p>Team,</p>\n<p>Our Network Operations Center will perform scheduled maintenance on our primary VPN gateways this Sunday from 02:00 to 04:00 EST. Brief service interruptions may occur. No user action or password reset is required.</p>\n<p>Check our status page at <code>status.internal.net</code> for live updates.</p>",
+    "body_html": "<p>Team,</p>\n<p>Our Network Operations Center will perform scheduled maintenance on our primary VPN gateways this Sunday from 02:00 to 04:00 EST. Brief service interruptions may occur. No user action or password reset is required.</p>\n<p>Check our status page at <code>status.brightlinecorp.example</code> for live updates.</p>",
     "safe_reasons": [
       "No Credential Requests: Explicitly states that no user action, credential entry, or password reset is required.",
       "Informational Tone: Standard operational notification providing advance notice through internal infrastructure channels."
@@ -121,13 +121,13 @@
     "technique": "genuine-internal-mail",
     "is_phish": false,
     "from_name": "Security Operations Automation",
-    "from_address": "secops-automation@internal.yourcompany.com",
+    "from_address": "secops-automation@brightlinecorp.example",
     "to": "you@brightlinecorp.example",
     "date_label": "Today",
     "subject": "Daily Automated Threat Intelligence & Ransomware Briefing",
     "preview": "Today's cross-sector briefing covering edge device zero-days and container OpenSSH audits has been generated.",
     "body_html": "<p>Automated Security Operations Briefing:</p>\n<p>Today's cross-sector briefing covering edge device zero-days (such as Veltra CVE-2026-107441) and container OpenSSH audits has been successfully generated and synchronized to your secure Brightline Drive folder and master CSV log.</p>\n<p><button data-link=\"drive\" id=\"drive-link\">View Shared Brightline Drive Folder</button></p>",
-    "links": [{ "id": "drive", "real_url": "https://drive.internal.yourcompany.com/secops/briefings" }],
+    "links": [{ "id": "drive", "real_url": "https://drive.brightlinecorp.example/secops/briefings" }],
     "safe_reasons": [
       "Contextual Consistency: Aligned with internal engineering workflows, utilizing trusted internal automation pipelines and verified cloud storage endpoints."
     ],
