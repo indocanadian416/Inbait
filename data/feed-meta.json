@@ -1,6 +1,9 @@
 {
-  "last_updated": "2026-11-07T09:00:00Z",
+  "last_updated": "2026-11-09T09:00:00Z",
   "sources": [
-    { "name": "Inbait threat desk", "note": "Editor-curated summaries of current phishing and social-engineering trends, written for training. All examples are illustrative and fictional." }
+    {
+      "name": "Inbait threat desk",
+      "note": "Editor-curated summaries of current phishing and social-engineering trends, written for training. All examples are illustrative and fictional."
+    }
   ]
 }
