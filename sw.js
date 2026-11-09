@@ -1,5 +1,5 @@
 // Inbait service worker: cache-first for static files, network-first for the news feed.
-const VERSION = 'inbait-v2';
+const VERSION = 'inbait-v3';
 const STATIC = [
   './', 'index.html', 'manifest.webmanifest',
   'css/tokens.css', 'css/base.css', 'css/layout.css', 'css/components.css', 'css/modules.css', 'css/print.css',

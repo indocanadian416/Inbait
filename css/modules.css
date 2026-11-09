@@ -52,3 +52,51 @@
 .lead { font-size: var(--fs-lg); }
 .card h2 { display: flex; gap: var(--sp-2); align-items: center; font-size: var(--fs-lg); }
 .no-shame { margin: var(--sp-4) 0; display: flex; gap: var(--sp-2); align-items: center; flex-wrap: wrap; }
+
+/* ---------- Challenge + Hook Radar (added) ---------- */
+.btn-sm { min-height: 32px; padding: 0 var(--sp-2); font-size: var(--fs-xs); }
+.chip-new { background: var(--brand-soft); color: var(--brand); border-color: var(--brand); font-weight: 700; }
+.chip-btn { cursor: pointer; }
+.chip-btn.is-on { background: var(--brand); color: #fff; border-color: var(--brand); }
+
+/* Challenge: progress */
+.ch-progress { margin-bottom: var(--sp-4); }
+.ch-progress-top { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-2); margin-bottom: var(--sp-2); }
+.ch-bar { height: 8px; background: var(--surface-2); border-radius: var(--r-pill); overflow: hidden; }
+.ch-bar > span { display: block; height: 100%; background: var(--brand); border-radius: var(--r-pill); transition: width .3s ease; }
+.ch-after { margin-top: var(--sp-4); }
+
+/* Challenge: result */
+.ch-result.is-pass { border-color: var(--success); }
+.ch-result-top { display: flex; align-items: center; gap: var(--sp-5); flex-wrap: wrap; }
+.ch-verdict { margin: 0 0 var(--sp-1); }
+.ch-review { list-style: none; margin: var(--sp-2) 0 0; padding: 0; }
+.ch-review li { display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-3) 0; border-top: 1px solid var(--border); }
+.ch-review li:first-child { border-top: 0; }
+.ch-mark { display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; border-radius: var(--r-pill); flex: none; }
+.ch-review li.ok .ch-mark { background: var(--success-soft); color: var(--success); }
+.ch-review li.miss .ch-mark { background: var(--danger-soft); color: var(--danger); }
+.ch-rev-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.ch-rev-label { font-weight: 600; }
+.ch-rev-links { display: flex; gap: var(--sp-1); flex: none; }
+.ch-history { list-style: none; margin: var(--sp-2) 0 0; padding: 0; }
+.ch-history li { display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-2) 0; border-top: 1px solid var(--border); }
+.ch-history li:first-child { border-top: 0; }
+.ch-hist-score { font-weight: 800; font-size: var(--fs-lg); min-width: 56px; }
+.ch-hist-mid { display: flex; flex-direction: column; }
+
+/* Hook Radar */
+.radar-filters { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin: var(--sp-3) 0 var(--sp-4); }
+.radar-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-3); }
+.radar-card { border: 1px solid var(--border); border-radius: var(--r-md); padding: var(--sp-4); background: var(--surface); }
+.radar-top { display: flex; align-items: center; gap: var(--sp-2); margin-bottom: var(--sp-2); flex-wrap: wrap; }
+.radar-time { margin-left: auto; }
+.radar-title { margin: 0 0 var(--sp-1); font-size: var(--fs-md); }
+.radar-sum { margin: 0 0 var(--sp-3); color: var(--text-muted); }
+.radar-links { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
+.radar-credit { margin-top: var(--sp-4); }
+.sev { text-transform: uppercase; font-size: 10px; font-weight: 800; letter-spacing: .04em; padding: 2px var(--sp-2); border-radius: var(--r-pill); }
+.sev-high { background: var(--danger-soft); color: var(--danger); }
+.sev-medium { background: var(--warning-soft); color: var(--warning); }
+.sev-low { background: var(--surface-2); color: var(--text-muted); }
+@media (min-width: 720px) { .radar-list { grid-template-columns: 1fr 1fr; } }
