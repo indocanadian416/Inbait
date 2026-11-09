@@ -1,5 +1,15 @@
 [
   {
+    "id": "r-callback-phishing",
+    "date": "2026-11-09",
+    "title": "\"Call us to cancel this charge\" scams are getting people to dial the attacker",
+    "summary": "Callback phishing (TOAD) sends a fake renewal or fraud alert with a number to call. Because you place the call, it feels safe, then the 'agent' asks for remote access or a code. Verify charges in your own account; never grant remote access or read a code.",
+    "category": "Voice",
+    "severity": "high",
+    "technique": "vishing",
+    "practice": { "type": "call", "id": "call-refund-callback" }
+  },
+  {
     "id": "r-clickfix-captcha",
     "date": "2026-11-07",
     "title": "Fake \"verify you are human\" pages are telling people to run commands",
