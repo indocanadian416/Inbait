@@ -1,1 +1,131 @@
-[]
+[
+  {
+    "id": "b-sso-clone",
+    "technique": "fake-login",
+    "is_phish": true,
+    "kind": "login",
+    "title": "Brightline SSO sign-in",
+    "tab_title": "Sign in",
+    "url": "https://brightlinecorp-sso.secure-login.example/auth",
+    "summary": "A link from an email opened a sign-in page that looks like your company SSO.",
+    "page": {
+      "heading": "Sign in to Brightline SSO",
+      "text": "Your session has expired. Please re-enter your credentials to continue."
+    },
+    "prompt": "A link in an email opened this sign-in page. What do you do?",
+    "choices": [
+      { "label": "Type my password and sign in", "correct": false },
+      { "label": "Check the address bar, then close the tab and go to the real portal myself", "correct": true },
+      { "label": "Enter a fake password to 'test' it first", "risk": "risky" }
+    ],
+    "red_flags": [
+      { "n": 1, "title": "Lookalike address", "explanation": "The real portal is on your corporate domain. This page is on secure-login.example with your company name only as a prefix, a classic lookalike.", "target": "address-bar" }
+    ],
+    "what_to_do": [
+      "Never sign in through a link in an email or message. Open your bookmark or type the known address yourself.",
+      "Read the full domain in the address bar, right to left; the real site is the part just before the first single slash.",
+      "If you already entered a password, change it now and report it; attackers use stolen credentials within minutes."
+    ],
+    "lesson": "A padlock and a familiar logo prove nothing. Only the domain in the address bar tells you where you really are."
+  },
+  {
+    "id": "b-clickfix-captcha",
+    "technique": "clickfix",
+    "is_phish": true,
+    "kind": "clickfix",
+    "title": "\"Verify you are human\"",
+    "tab_title": "Verification",
+    "url": "https://video-player-check.example/verify",
+    "summary": "A page claims you must complete a verification step by pasting something into your computer.",
+    "page": {
+      "heading": "Verify you are human",
+      "text": "To confirm you are not a robot, complete the quick verification below.",
+      "steps": [
+        "Press the Windows key + R",
+        "Press Ctrl + V to paste the verification code",
+        "Press Enter to finish"
+      ]
+    },
+    "prompt": "The page wants you to copy a 'verification code' and run it. What do you do?",
+    "choices": [
+      { "label": "Follow the steps and paste the code", "correct": false },
+      { "label": "Close the page — a real check never asks me to run commands", "correct": true },
+      { "label": "Copy the code but don't run it, just to look", "risk": "risky" }
+    ],
+    "red_flags": [
+      { "n": 1, "title": "It tells you to run something", "explanation": "No genuine CAPTCHA asks you to open the Run box, a terminal, or File Explorer and paste anything. That sequence runs an attacker's command on your machine.", "target": "paste-steps" }
+    ],
+    "what_to_do": [
+      "Never paste anything a web page tells you to into the Run box, PowerShell, a terminal, or File Explorer.",
+      "Close the tab. If you pasted and ran it, disconnect from the network and tell IT immediately.",
+      "Remember the shape of this trick (\"ClickFix\"): a fake error or CAPTCHA plus copy-paste instructions."
+    ],
+    "lesson": "A website can put text on your clipboard, but only you can run it. The whole scam depends on you pasting it somewhere dangerous."
+  },
+  {
+    "id": "b-oauth-consent",
+    "technique": "consent-phishing",
+    "is_phish": true,
+    "kind": "oauth",
+    "title": "App permission request",
+    "tab_title": "Permissions",
+    "url": "https://login.brightlinecorp.example/oauth/consent",
+    "summary": "An app is asking for permission to your mailbox and files. The sign-in page itself is genuine.",
+    "page": {
+      "app_name": "Mail Productivity Booster",
+      "publisher": "Unverified publisher",
+      "permissions": [
+        "Read, send, and permanently delete your email",
+        "Read and write your contacts",
+        "Read all files you have access to",
+        "Maintain access to data you have given it access to"
+      ]
+    },
+    "prompt": "You clicked a link and a real sign-in now asks you to grant this app access. What do you do?",
+    "choices": [
+      { "label": "Click Accept so I can use the app", "correct": false },
+      { "label": "Deny — an unverified app does not need my whole mailbox", "correct": true },
+      { "label": "Accept for now and remove it later", "risk": "risky" }
+    ],
+    "red_flags": [
+      { "n": 1, "title": "Unverified publisher", "explanation": "A legitimate business app is almost always from a verified publisher. 'Unverified' on a permissions screen is a serious warning.", "target": "publisher" },
+      { "n": 2, "title": "Excessive permissions", "explanation": "Reading, sending and deleting all your mail and files is far more than a small helper app needs. Granting it hands an attacker your account without ever stealing a password.", "target": "permissions" }
+    ],
+    "what_to_do": [
+      "Deny access and close the page. Only approve app permissions you expected and that match what the app does.",
+      "Consent phishing skips your password and MFA entirely, so the sign-in looking genuine is not reassurance.",
+      "Report it; your IT team can block the app for everyone and check who else approved it."
+    ],
+    "lesson": "Consent phishing asks for access, not your password. The login can be real and the trap still springs when you click Accept."
+  },
+  {
+    "id": "b-fake-update",
+    "technique": "fake-updates",
+    "is_phish": true,
+    "kind": "fake-update",
+    "title": "\"Your browser is out of date\"",
+    "tab_title": "Update required",
+    "url": "https://secure-browser-update.example/download",
+    "summary": "A full-page banner says your browser is dangerously out of date and offers a download.",
+    "page": {
+      "heading": "Your browser is out of date",
+      "text": "You are missing critical security updates. Download the latest version now to stay protected.",
+      "button": "Update browser now"
+    },
+    "prompt": "A website is telling you to download a browser update. What do you do?",
+    "choices": [
+      { "label": "Download and run the update", "correct": false },
+      { "label": "Ignore it — real updates come from the browser, not a web page", "correct": true },
+      { "label": "Download it but scan it before running", "risk": "risky" }
+    ],
+    "red_flags": [
+      { "n": 1, "title": "A web page cannot update your browser", "explanation": "Browsers update themselves in the background or through their own settings. Any site offering a browser 'update' download is serving malware.", "target": "update-banner" }
+    ],
+    "what_to_do": [
+      "Close the tab. Check for genuine updates only inside the browser's own menu (for example, Help or Settings, then About).",
+      "Do not run installers offered by a random website, even if the page looks urgent or official.",
+      "If you downloaded and ran it, treat the device as compromised and contact IT."
+    ],
+    "lesson": "Software updates come from the software itself, never from a web page telling you that you are at risk."
+  }
+]

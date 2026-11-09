@@ -35,14 +35,28 @@ or save it as `docs/BRIEF.md`.
 - Placeholder "coming soon" modules: challenge, radar, learn
 
 ## Not done yet
-- Scenario content: emails, calls, chats, browser, texts, challenge pool, Learn topics
-- Challenge engine (draws, scoring, verdicts, results page, share card, history)
-- Hook Radar page + `scripts/fetch_feed.py`, `sources.json`, `keywords.json`
-- Learn page
-- About page: add Hook Radar source credits once Radar exists
+- Scenario content: calls (`calls.json` still empty)
+- Hook Radar auto-refresh: `scripts/fetch_feed.py`, `sources.json`, `keywords.json` (feed is
+  currently a hand-curated, static `data/feed.json` + `feed-meta.json`, no live fetch yet)
+- Learn page (slugs exist in `learn.json`; the Learn *page* is still a "coming soon" placeholder,
+  so "Learn more" / Radar "Learn" links land on the placeholder for now)
+- About page: add Hook Radar source credits
 - `scripts/validate_content.py`, `.github/workflows/pages.yml`
 - README, `docs/CONTENT_GUIDE.md`, SECURITY.md, CONTRIBUTING.md
 - Section 16 acceptance tests, PR into `main`
+
+## Done since first version (content + three sections)
+- Scenario content from `docs/SCENARIOS.md`: 6 emails, 2 texts, 2 chats, 4 browser pages; 16 Learn
+  topic slugs. All fictional/compliant (.example domains, fictional brands, 555-01xx numbers);
+  genuine internal mail aligned to `brightlinecorp.example`.
+- Challenge engine (`modules/challenge.js`): random mixed draw across folders, no hints until the end,
+  scoring + verdict tiers, results page with score ring, per-item review, share-card copy, retry, and
+  history. Result shape matches the fields `inbox.js` already reads (`score`, `verdict`, `date`, `missed`).
+- Hook Radar (`modules/radar.js`): curated trends feed with severity + category chips, category
+  filters, "new since last visit" markers (`store.radarLastVisit`), search, and Learn/Practice links.
+- SW cache bumped to `inbait-v3` because JS/CSS changed. New CSS lives at the end of `css/modules.css`.
+- Owner decided to keep the Browser folder (not remove it) and fill it; browser-delivered phishing
+  (fake login, ClickFix, OAuth consent, fake update) is a core modern vector gateway vendors can't rehearse.
 
 ## Decisions made by the owner
 - Switch publishing to GitHub Actions later, in this order: confirm gh-pages == site/, check workflow
