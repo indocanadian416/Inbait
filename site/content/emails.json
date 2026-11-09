@@ -1,0 +1,141 @@
+[
+  {
+    "id": "e-vendor-wire",
+    "technique": "executive-impersonation",
+    "is_phish": true,
+    "from_name": "Office of the CEO",
+    "from_address": "ce0-office@corp-secure-auth.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "URGENT: Confidential Vendor Settlement Required Today",
+    "preview": "I am currently locked in urgent board negotiations and cannot take calls. We need to settle an emergency invoice...",
+    "body_html": "<p>Team,</p>\n<p>I am currently locked in urgent board negotiations and cannot take calls. We need to settle an emergency invoice with our primary hardware vendor immediately to avoid supply chain termination.</p>\n<p id=\"urgency\">Please wire $48,500 to the escrow account details provided in the secure portal link below within the next 2 hours. Do not discuss this with local finance yet to maintain confidentiality.</p>\n<p><button data-link=\"portal\" id=\"cta-link\">Access Secure Escrow Portal &amp; Authorize Payment</button></p>",
+    "links": [{ "id": "portal", "real_url": "https://corp-secure-auth.example/escrow-portal" }],
+    "red_flags": [
+      { "n": 1, "title": "External Lookalike Domain", "explanation": "Uses a typo-squatted domain (corp-secure-auth.example) rather than the corporate domain.", "target": "header-from" },
+      { "n": 2, "title": "Urgency & Secrecy", "explanation": "Pressures the target to bypass standard multi-person financial controls and keep the request secret from colleagues.", "target": "urgency" },
+      { "n": 3, "title": "Generic Call to Action", "explanation": "Generic anchor text pointing to an external credential-harvesting or credential-stuffing landing page.", "target": "cta-link" }
+    ],
+    "what_to_do": [
+      "Stop. A genuine executive will not ask you to bypass finance controls or keep a payment secret.",
+      "Verify the request out of band: call the executive or finance on a number you already have, not one in the email.",
+      "Report the message to your security team and do not click the link or move any money."
+    ],
+    "lesson": "Urgency plus secrecy plus a payment request is the signature of business email compromise. Slow down and verify through a channel you already trust."
+  },
+  {
+    "id": "e-mfa-reregister",
+    "technique": "credential-harvesting",
+    "is_phish": true,
+    "from_name": "IT Support Alerts",
+    "from_address": "it-support-alerts@defender-auth-alerts.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Action Required: Mandatory Multi-Factor Authentication (MFA) Re-Registration",
+    "preview": "As part of our enterprise security hardening schedule following recent threat intelligence bulletins, all employees must re-verify...",
+    "body_html": "<p>Dear Employee,</p>\n<p id=\"deadline\">As part of our enterprise security hardening schedule following recent threat intelligence bulletins, all employees must re-verify their authentication tokens within 24 hours. Failure to update will result in account suspension and loss of email access.</p>\n<p>Click below to sync your hardware token or authenticator app:</p>\n<p><button data-link=\"verify\" id=\"cta-link\">Verify &amp; Sync Authentication Token Now</button></p>",
+    "links": [{ "id": "verify", "real_url": "https://defender-auth-alerts.example/verify" }],
+    "red_flags": [
+      { "n": 1, "title": "Suspicious Sender Infrastructure", "explanation": "Hosted on an unrelated external domain (defender-auth-alerts.example).", "target": "header-from" },
+      { "n": 2, "title": "Coercive Deadlines", "explanation": "Threatens account lockout to trigger panic and quick compliance.", "target": "deadline" },
+      { "n": 3, "title": "Credential Harvesting Link", "explanation": "Directs users away from the legitimate internal IDP login portal to an external harvesting clone.", "target": "cta-link" }
+    ],
+    "what_to_do": [
+      "Never re-register MFA from a link in an email. Open your authenticator or sign-in portal the way you normally do.",
+      "Check the real sender domain; security notices come from your own IT, not an outside address.",
+      "Report it and let the deadline pass. Genuine IT will not lock you out for ignoring a suspicious email."
+    ],
+    "lesson": "A countdown to account lockout is pressure, not policy. Go to the known internal portal yourself."
+  },
+  {
+    "id": "e-license-iso",
+    "technique": "malicious-attachments",
+    "is_phish": true,
+    "from_name": "Software Licensing",
+    "from_address": "billing@software-license-renewal-portal.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Critical Notice: Enterprise Software Subscription Expiring Today",
+    "preview": "Your department's annual enterprise software license agreement has expired due to a billing failure...",
+    "attachments": [{ "name": "Enterprise_License_Agreement_2026_Update.iso", "size": "3.4 MB" }],
+    "body_html": "<p>Hello Administrator,</p>\n<p id=\"disruption\">Your department's annual enterprise software license agreement has expired due to a billing failure. To prevent disruption to your design and documentation workflows, please review and execute the attached updated licensing agreement script.</p>",
+    "red_flags": [
+      { "n": 1, "title": "Malicious File Attachment", "explanation": "Uses an ISO or archived executable container designed to bypass email gateway macro inspection and drop remote-access trojans or infostealer payloads.", "target": "attachment" },
+      { "n": 2, "title": "Urgently Framed Business Disruption", "explanation": "Leverages common enterprise software names to induce quick downloading without security scrutiny.", "target": "disruption" }
+    ],
+    "what_to_do": [
+      "Do not open .iso or other executable or archive attachments you were not expecting.",
+      "Licensing is handled by your IT or procurement team, not by a billing email with an attached 'script'.",
+      "Report the message so the attachment can be analysed safely."
+    ],
+    "lesson": "An ISO or archived executable in an unexpected 'invoice' or 'license' email is a classic malware dropper."
+  },
+  {
+    "id": "e-hr-expense-q4",
+    "technique": "genuine-internal-mail",
+    "is_phish": false,
+    "from_name": "HR Announcements",
+    "from_address": "hr-announcements@brightlinecorp.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "9 Nov 2026",
+    "subject": "Updated Remote Work Expense Guidelines for Q4",
+    "preview": "Please review the updated Q4 remote work and office equipment expense policy attached to this email.",
+    "attachments": [{ "name": "Q4_Expense_Guidelines_2026.pdf", "size": "214 KB" }],
+    "body_html": "<p>Hi Everyone,</p>\n<p>Please review the updated Q4 remote work and office equipment expense policy attached to this email. The internal finance wiki has also been updated with the new submission codes. If you have any questions, reach out via our internal Slack channel <code>#hr-support</code>.</p>",
+    "safe_reasons": [
+      "Internal Domain Alignment: Sent entirely from the verified internal corporate domain (brightlinecorp.example).",
+      "Standard Document Format: Uses a safe, non-executable document format (.pdf) rather than scripts or ISOs.",
+      "Alternative Contact Channels: Directs inquiries to an official internal communication channel rather than demanding immediate external action."
+    ],
+    "what_to_do": [
+      "Trusting genuine messages is part of the job. This one is safe to read and act on.",
+      "If anything ever looks off, confirm through a channel you already know, like the #hr-support Slack channel named here, rather than a link in the message.",
+      "Open attachments like a .pdf as normal; be wary only of executable or archive formats such as .iso, .exe or script files."
+    ],
+    "lesson": "A message from your real internal domain that points you to official channels and asks for none of your secrets is usually exactly what it says it is."
+  },
+  {
+    "id": "e-vpn-maintenance",
+    "technique": "genuine-internal-mail",
+    "is_phish": false,
+    "from_name": "NOC Operations",
+    "from_address": "noc-ops@brightlinecorp.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "7 Nov 2026",
+    "subject": "Scheduled Maintenance: VPN Gateway Upgrades This Sunday",
+    "preview": "Our Network Operations Center will perform scheduled maintenance on our primary VPN gateways this Sunday from 02:00 to 04:00 EST.",
+    "body_html": "<p>Team,</p>\n<p>Our Network Operations Center will perform scheduled maintenance on our primary VPN gateways this Sunday from 02:00 to 04:00 EST. Brief service interruptions may occur. No user action or password reset is required.</p>\n<p>Check our status page at <code>status.brightlinecorp.example</code> for live updates.</p>",
+    "safe_reasons": [
+      "No Credential Requests: Explicitly states that no user action, credential entry, or password reset is required.",
+      "Informational Tone: Standard operational notification providing advance notice through internal infrastructure channels."
+    ],
+    "what_to_do": [
+      "Nothing. A maintenance notice that asks for no action and no password is informational, so just note the window.",
+      "Remember that genuine IT notices tell you when NOT to act; scams almost always demand that you do something urgently.",
+      "If you want to confirm, visit the known internal status page yourself rather than following a link someone sends you."
+    ],
+    "lesson": "Real operational notices inform you; they do not pressure you to enter credentials or reset a password out of the blue."
+  },
+  {
+    "id": "e-threat-briefing",
+    "technique": "genuine-internal-mail",
+    "is_phish": false,
+    "from_name": "Security Operations Automation",
+    "from_address": "secops-automation@brightlinecorp.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Daily Automated Threat Intelligence & Ransomware Briefing",
+    "preview": "Today's cross-sector briefing covering edge device zero-days and container OpenSSH audits has been generated.",
+    "body_html": "<p>Automated Security Operations Briefing:</p>\n<p>Today's cross-sector briefing covering edge device zero-days (such as Veltra CVE-2026-107441) and container OpenSSH audits has been successfully generated and synchronized to your secure Brightline Drive folder and master CSV log.</p>\n<p><button data-link=\"drive\" id=\"drive-link\">View Shared Brightline Drive Folder</button></p>",
+    "links": [{ "id": "drive", "real_url": "https://drive.brightlinecorp.example/secops/briefings" }],
+    "safe_reasons": [
+      "Contextual Consistency: Aligned with internal engineering workflows, utilizing trusted internal automation pipelines and verified cloud storage endpoints."
+    ],
+    "what_to_do": [
+      "Nothing unusual is needed. This is your own automation posting its daily briefing to a known internal location.",
+      "If you want the report, open the shared drive the way you normally do rather than only trusting the link.",
+      "Stay aware that attackers imitate this style, so still check the sender and destination before acting on any 'briefing'."
+    ],
+    "lesson": "Expected, context-appropriate automation from your own internal systems is the normal background hum of a secure workplace."
+  }
+]

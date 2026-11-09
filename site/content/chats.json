@@ -1,0 +1,55 @@
+[
+  {
+    "id": "c-fake-helpdesk",
+    "technique": "fake-helpdesk",
+    "is_phish": true,
+    "title": "Account security alert",
+    "channel": "Direct message",
+    "contact": { "name": "Alex_Morgan_IT_Helpdesk", "handle": "@alex.morgan.ext", "external": true },
+    "messages": [
+      { "from": "them", "text": "Hello! We noticed unusual login attempts on your enterprise account from an overseas IP address. Please click this quick support link and authenticate your session so we can prevent your account from being locked: https://helpdesk-auth-verify.internal-support.example/login", "time": "11:27" }
+    ],
+    "prompt": "An 'IT helpdesk' guest messages you in chat. What do you do?",
+    "choices": [
+      { "label": "Click the link and sign in to secure my account", "correct": false },
+      { "label": "Report it and contact IT through our known helpdesk", "correct": true },
+      { "label": "Reply asking them to prove who they are", "risk": "risky" }
+    ],
+    "red_flags": [
+      { "n": 1, "title": "External Guest Badge", "explanation": "Appears in corporate chat channels with an external guest or unverified badge.", "target": "external-badge" },
+      { "n": 2, "title": "False Urgency", "explanation": "Uses fear of account lockout to rush the user into clicking an unauthorized external phishing link.", "target": "msg-1" }
+    ],
+    "what_to_do": [
+      "Do not click security links sent by external or unverified accounts in chat.",
+      "Contact IT through the helpdesk channel or number you already know to check whether anything is wrong.",
+      "Report the account. Impostor helpdesks rely on you acting before you verify."
+    ],
+    "lesson": "An external badge plus account-lockout fear plus a login link is a fake-helpdesk phish."
+  },
+  {
+    "id": "c-staging-pr",
+    "technique": "genuine-team-chat",
+    "is_phish": false,
+    "title": "Staging cluster fix",
+    "channel": "#dev-team",
+    "contact": { "name": "Sarah Jenkins (DevOps Lead)", "handle": "@sarah.jenkins", "external": false },
+    "messages": [
+      { "from": "them", "text": "Hey team, just pushed the fix for the staging cluster timeout issue to the feature/fix-auth-timeout branch. Can someone take a quick look at the PR when you have a moment? No rush, review tomorrow morning is fine.", "time": "16:45" }
+    ],
+    "prompt": "Your DevOps lead posts in the team channel. What do you do?",
+    "choices": [
+      { "label": "Open the PR and review it when I get a chance", "correct": true },
+      { "label": "Report it as a phishing attempt", "correct": false },
+      { "label": "Demand they verify their identity first", "risk": "risky" }
+    ],
+    "safe_reasons": [
+      "Contextual Work Discussion: References internal code branches, peer code review processes, and normal asynchronous engineering workflows without any suspicious links, urgency, or credential requests."
+    ],
+    "what_to_do": [
+      "Just review the PR when you have a moment, as asked.",
+      "Trusting normal, specific, no-pressure work messages keeps real collaboration moving.",
+      "Stay alert to the contrast: real colleagues reference real work and never rush you to hand over credentials."
+    ],
+    "lesson": "Specific, contextual, unhurried work chatter from a known teammate is exactly what genuine collaboration looks like."
+  }
+]

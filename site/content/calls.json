@@ -1,0 +1,134 @@
+[
+  {
+    "id": "call-refund-callback",
+    "technique": "vishing",
+    "is_phish": true,
+    "outgoing": true,
+    "caller_name": "SecureGuard Billing",
+    "caller_number": "+1 (800) 555-0147",
+    "time_label": "Today",
+    "intro": "A voicemail said your account will be auto-charged $499.99 today unless you call this number to cancel. You are calling it back now.",
+    "start": "n1",
+    "decline_ending": "e-decline",
+    "nodes": {
+      "n1": {
+        "speaker": "caller",
+        "lines": [
+          "Thank you for calling SecureGuard Billing, this is Daniel.",
+          "I can see an automatic renewal of $499.99 scheduled on your account for today. Were you calling to cancel that?"
+        ],
+        "choices": [
+          { "label": "Yes, I never authorised any renewal — cancel it", "next": "n2" },
+          { "label": "How did you even get my details? I never signed up", "next": "n2b" },
+          { "label": "Hang up and check my real card statement myself", "next": "e-safe-hangup" }
+        ]
+      },
+      "n2": {
+        "speaker": "caller",
+        "lines": [
+          "Not a problem at all, I can process a full refund right now.",
+          "To do that I just need to connect to your computer. Please go to the website I'll read out and install our quick support tool so I can push the refund through."
+        ],
+        "choices": [
+          { "label": "Okay, I'll install the support tool", "next": "e-compromised-install" },
+          { "label": "Can't you just refund the card directly?", "next": "n3" },
+          { "label": "I'm not installing anything. I'll call my bank on the number on my card", "next": "e-safe-verify" }
+        ]
+      },
+      "n2b": {
+        "speaker": "caller",
+        "lines": [
+          "It's linked to the email on your renewal notice, sir. Let's just get this refunded for you.",
+          "First I need to verify your identity — can you read me the one-time code we just texted to your phone?"
+        ],
+        "choices": [
+          { "label": "Sure, the code is three-nine...", "next": "e-compromised-code" },
+          { "label": "I will never read out a one-time code", "next": "e-safe-verify" }
+        ]
+      },
+      "n3": {
+        "speaker": "caller",
+        "lines": [
+          "Unfortunately our system can't push a refund to the card directly, that's exactly why I need remote access.",
+          "It only takes a minute. Shall I send you the download link now?"
+        ],
+        "choices": [
+          { "label": "Fine, send me the link", "next": "e-compromised-install" },
+          { "label": "No. A real company doesn't need to control my computer to refund me", "next": "e-safe-verify" }
+        ]
+      }
+    },
+    "endings": {
+      "e-safe-hangup": { "result": "safe", "title": "You hung up and checked for yourself", "explanation": "You didn't engage with the pressure and went straight to your own records instead.", "lesson": "A refund never requires remote access to your computer or a code read aloud. Verify any charge in your own account, not with the caller." },
+      "e-safe-verify": { "result": "safe", "title": "You refused remote access and verified independently", "explanation": "You stopped at the exact point the scam needs you to comply, and moved to a channel you trust.", "lesson": "Hang up and call the number printed on your card or statement. Never install software or read codes because a 'billing agent' asked, even on a call you placed." },
+      "e-compromised-install": { "result": "compromised", "title": "You installed their remote tool", "explanation": "With remote access they can drain accounts, steal files, and lock you out while you watch the screen.", "lesson": "No legitimate refund or support call needs to remote-control your computer. That request is the whole scam." },
+      "e-compromised-code": { "result": "compromised", "title": "You read out the one-time code", "explanation": "That code let them log in as you or authorise a payment. Codes are for you to type, never to say.", "lesson": "A one-time code read aloud is a handover of your account. Legitimate staff never ask you to speak it." },
+      "e-decline": { "result": "safe", "title": "You chose not to call back", "explanation": "An unsolicited 'you'll be charged, call this number' message is classic callback phishing (TOAD). Not calling is a valid, safe choice.", "lesson": "Don't call numbers from unexpected billing scares. Look up the company yourself, or check your real account." }
+    },
+    "red_flags": [
+      { "n": 1, "title": "Unsolicited payment scare", "explanation": "A surprise 'you'll be charged $499' with a number to call is designed to make you phone back in a panic. This is callback phishing, also called TOAD.", "target": "caller-number" },
+      { "n": 2, "title": "Remote-access request", "explanation": "Being told to install a 'support tool' so they can connect to your computer is a hallmark of refund and tech-support scams." },
+      { "n": 3, "title": "One-time code request", "explanation": "Any request to read a code aloud is an attempt to take over your account or approve a payment." }
+    ],
+    "what_to_do": [
+      "Don't call back numbers from unexpected billing or renewal warnings. Find the company yourself and check your real account.",
+      "Never install remote-access software or read a one-time code because a caller asked, even if you placed the call.",
+      "If money may be involved, hang up and call your bank on the number printed on your card."
+    ],
+    "lesson": "Callback phishing flips the script: you dial them, so it feels safe. The defence is the same, verify independently and never grant remote access or share a code."
+  },
+  {
+    "id": "call-it-impersonation",
+    "technique": "vishing",
+    "is_phish": true,
+    "outgoing": false,
+    "caller_name": "IT Service Desk",
+    "caller_number": "+1 (800) 555-0163",
+    "time_label": "Now",
+    "intro": "Your phone rings. The screen shows \"IT Service Desk\".",
+    "start": "n1",
+    "decline_ending": "e-decline",
+    "nodes": {
+      "n1": {
+        "speaker": "caller",
+        "lines": [
+          "Hi, this is Marcus from the IT Service Desk. We've detected a sign-in to your account from another country and we're locking it down right now.",
+          "To confirm it's really you and stop the attacker, I need the six-digit code we just sent to your phone. Can you read it to me?"
+        ],
+        "choices": [
+          { "label": "Read the code so they can secure my account", "next": "e-code" },
+          { "label": "Why would IT need my code? That's not normal", "next": "n2" },
+          { "label": "I'll hang up and call the service desk on our internal number", "next": "e-callback" }
+        ]
+      },
+      "n2": {
+        "speaker": "caller",
+        "lines": [
+          "I understand your caution, but the attacker is active in your account right now. If you don't confirm in the next minute you'll be locked out of everything.",
+          "Just read me the code, or approve the prompt I'm sending to your phone now."
+        ],
+        "choices": [
+          { "label": "Approve the prompt to make it stop", "next": "e-approve" },
+          { "label": "No. I'm hanging up and contacting IT myself", "next": "e-callback" }
+        ]
+      }
+    },
+    "endings": {
+      "e-code": { "result": "compromised", "title": "You read the code to the caller", "explanation": "They used it to log in as you. 'IT Service Desk' on your screen is trivially spoofed and proves nothing.", "lesson": "Real IT never needs a code you received. Hang up and reach the service desk through a channel you already trust." },
+      "e-approve": { "result": "compromised", "title": "You approved the login prompt", "explanation": "Approving a prompt you didn't start let the attacker straight in. The 'emergency' was manufactured to rush you.", "lesson": "Only approve prompts you started yourself. An unexpected prompt means your password is already known, so deny it and report." },
+      "e-callback": { "result": "safe", "title": "You hung up and verified through IT", "explanation": "You refused to act on the caller's urgency and used a trusted channel to check instead.", "lesson": "Caller ID is easy to fake. Hang up and call back on a number you already have before doing anything a caller asks." },
+      "e-decline": { "result": "safe", "title": "You let it go and checked with IT yourself", "explanation": "Declining an unexpected 'urgent IT' call and verifying independently is exactly right.", "lesson": "If it is genuinely urgent, IT can be reached on your known internal number. Spoofed caller ID can't survive a callback." }
+    },
+    "red_flags": [
+      { "n": 1, "title": "Spoofed caller ID", "explanation": "The name and number on screen are not proof of identity; attackers fake 'IT Service Desk' easily.", "target": "caller-number" },
+      { "n": 2, "title": "Request for your code or approval", "explanation": "Asking you to read a code or approve a prompt is an attempt to complete the attacker's own login as you." },
+      { "n": 3, "title": "Manufactured emergency", "explanation": "'An attacker is active right now, act immediately' is pressure to stop you thinking and verifying." }
+    ],
+    "what_to_do": [
+      "Hang up on unexpected 'urgent IT or security' calls and call the service desk back on your known internal number.",
+      "Never read out a one-time code or approve a login prompt you didn't start.",
+      "Report the call so IT can warn others and check your account."
+    ],
+    "lesson": "A caller claiming to be IT, a code request, and a ticking clock is vishing. Hang up and call a number you already trust."
+  }
+]

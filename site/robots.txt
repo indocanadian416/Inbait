@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://indocanadian416.github.io/Inbait/sitemap.xml

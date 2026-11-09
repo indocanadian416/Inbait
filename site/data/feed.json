@@ -1,0 +1,90 @@
+[
+  {
+    "id": "r-callback-phishing",
+    "date": "2026-11-09",
+    "title": "\"Call us to cancel this charge\" scams are getting people to dial the attacker",
+    "summary": "Callback phishing (TOAD) sends a fake renewal or fraud alert with a number to call. Because you place the call, it feels safe, then the 'agent' asks for remote access or a code. Verify charges in your own account; never grant remote access or read a code.",
+    "category": "Voice",
+    "severity": "high",
+    "technique": "vishing",
+    "practice": { "type": "call", "id": "call-refund-callback" }
+  },
+  {
+    "id": "r-clickfix-captcha",
+    "date": "2026-11-07",
+    "title": "Fake \"verify you are human\" pages are telling people to run commands",
+    "summary": "A fast-spreading trick (\"ClickFix\") shows a fake CAPTCHA or error and asks you to press Windows+R and paste a \"verification code\". The code is malware. Legitimate checks never ask you to run anything.",
+    "category": "Browser",
+    "severity": "high",
+    "technique": "clickfix",
+    "practice": { "type": "browser", "id": "b-clickfix-captcha" }
+  },
+  {
+    "id": "r-consent-phishing",
+    "date": "2026-11-06",
+    "title": "Attackers skip your password with \"approve this app\" requests",
+    "summary": "Consent-phishing apps ask you to grant access to your mailbox and files. Because you sign in for real and pass MFA, the only defence is reading the permissions and denying unverified apps.",
+    "category": "Account",
+    "severity": "high",
+    "technique": "consent-phishing",
+    "practice": { "type": "browser", "id": "b-oauth-consent" }
+  },
+  {
+    "id": "r-invoice-bec",
+    "date": "2026-11-05",
+    "title": "Urgent \"confidential\" payment requests from the \"CEO\" are rising",
+    "summary": "Business email compromise messages push finance and assistants to wire money fast and in secret. The tell is always the same: urgency plus secrecy plus a payment change. Verify on a known number.",
+    "category": "Email",
+    "severity": "high",
+    "technique": "executive-impersonation",
+    "practice": { "type": "email", "id": "e-vendor-wire" }
+  },
+  {
+    "id": "r-parcel-smishing",
+    "date": "2026-11-04",
+    "title": "\"Your parcel needs a small fee\" texts are everywhere again",
+    "summary": "Delivery-fee smishing uses a tiny charge ($1-2) to capture card and billing details. If you did not start it, don't tap the link; check the carrier's real app yourself.",
+    "category": "Text",
+    "severity": "medium",
+    "technique": "smishing",
+    "practice": { "type": "text", "id": "t-parcel-fee" }
+  },
+  {
+    "id": "r-mfa-fatigue",
+    "date": "2026-11-03",
+    "title": "Repeated login approval prompts? That's an attack, not a glitch",
+    "summary": "MFA fatigue floods you with approval prompts after your password is stolen, betting you'll tap Approve to stop them. A prompt you didn't start means deny it and change your password.",
+    "category": "Account",
+    "severity": "medium",
+    "technique": "mfa-fatigue"
+  },
+  {
+    "id": "r-quishing",
+    "date": "2026-11-01",
+    "title": "QR codes in emails and letters are hiding phishing links",
+    "summary": "Quishing moves you onto a personal phone, outside corporate filtering, and hides the real destination. Preview the link before opening, and be wary of QR codes that lead to a login or payment.",
+    "category": "QR",
+    "severity": "medium",
+    "technique": "quishing"
+  },
+  {
+    "id": "r-fake-update",
+    "date": "2026-10-30",
+    "title": "\"Your browser is out of date\" pop-ups are serving malware",
+    "summary": "Full-page update warnings push you to download an installer. Browsers update themselves; any site offering a browser update is a trap. Update only from the browser's own settings.",
+    "category": "Browser",
+    "severity": "medium",
+    "technique": "fake-updates",
+    "practice": { "type": "browser", "id": "b-fake-update" }
+  },
+  {
+    "id": "r-fake-helpdesk",
+    "date": "2026-10-28",
+    "title": "Fake IT helpdesks are messaging staff in chat apps",
+    "summary": "An \"external guest\" posing as IT warns of a locked account and sends a login link. Verify through the helpdesk you already know; never trust a security link from an unexpected support contact.",
+    "category": "Chat",
+    "severity": "medium",
+    "technique": "fake-helpdesk",
+    "practice": { "type": "chat", "id": "c-fake-helpdesk" }
+  }
+]
