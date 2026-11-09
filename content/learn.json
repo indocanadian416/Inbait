@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "slug": "genuine-internal-mail",
+    "title": "Spotting genuine internal mail",
+    "summary": "Legitimate internal messages come from your real corporate domain, point you to official channels you already know (an internal wiki, a named Slack channel, a status page), use safe document formats such as .pdf, and never pressure you to enter credentials, reset a password, or act in secret. When a message asks for none of your secrets and gives you a normal way to check, that is a good sign. Still verify anything unexpected through a channel you already trust rather than a link in the message itself."
+  }
+]

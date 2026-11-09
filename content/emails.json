@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "id": "e-hr-expense-q4",
+    "technique": "genuine-internal-mail",
+    "is_phish": false,
+    "from_name": "HR Announcements",
+    "from_address": "hr-announcements@internal.yourcompany.com",
+    "to": "you@brightlinecorp.example",
+    "date_label": "9 Nov 2026",
+    "subject": "Updated Remote Work Expense Guidelines for Q4",
+    "preview": "Please review the updated Q4 remote work and office equipment expense policy attached to this email.",
+    "attachments": [
+      { "name": "Q4_Expense_Guidelines_2026.pdf", "size": "214 KB" }
+    ],
+    "body_html": "<p>Hi Everyone,</p>\n<p>Please review the updated Q4 remote work and office equipment expense policy attached to this email. The internal finance wiki has also been updated with the new submission codes. If you have any questions, reach out via our internal Slack channel <code>#hr-support</code>.</p>",
+    "safe_reasons": [
+      "Internal Domain Alignment: Sent entirely from the verified internal corporate domain (internal.yourcompany.com).",
+      "Standard Document Format: Uses a safe, non-executable document format (.pdf) rather than scripts or ISOs.",
+      "Alternative Contact Channels: Directs inquiries to an official internal communication channel rather than demanding immediate external action."
+    ],
+    "what_to_do": [
+      "Trusting genuine messages is part of the job. This one is safe to read and act on.",
+      "If anything ever looks off, confirm through a channel you already know, like the #hr-support Slack channel named here, rather than a link in the message.",
+      "Open attachments like a .pdf as normal; be wary only of executable or archive formats such as .iso, .exe or script files."
+    ],
+    "lesson": "A message from your real internal domain that points you to official channels and asks for none of your secrets is usually exactly what it says it is."
+  },
+  {
+    "id": "e-vpn-maintenance",
+    "technique": "genuine-internal-mail",
+    "is_phish": false,
+    "from_name": "NOC Operations",
+    "from_address": "noc-ops@internal.yourcompany.com",
+    "to": "you@brightlinecorp.example",
+    "date_label": "7 Nov 2026",
+    "subject": "Scheduled Maintenance: VPN Gateway Upgrades This Sunday",
+    "preview": "Our Network Operations Center will perform scheduled maintenance on our primary VPN gateways this Sunday from 02:00 to 04:00 EST.",
+    "body_html": "<p>Team,</p>\n<p>Our Network Operations Center will perform scheduled maintenance on our primary VPN gateways this Sunday from 02:00 to 04:00 EST. Brief service interruptions may occur. No user action or password reset is required.</p>\n<p>Check our status page at <code>status.internal.net</code> for live updates.</p>",
+    "safe_reasons": [
+      "No Credential Requests: Explicitly states that no user action, credential entry, or password reset is required.",
+      "Informational Tone: Standard operational notification providing advance notice through internal infrastructure channels."
+    ],
+    "what_to_do": [
+      "Nothing. A maintenance notice that asks for no action and no password is informational, so just note the window.",
+      "Remember that genuine IT notices tell you when NOT to act; scams almost always demand that you do something urgently.",
+      "If you want to confirm, visit the known internal status page yourself rather than following a link someone sends you."
+    ],
+    "lesson": "Real operational notices inform you; they do not pressure you to enter credentials or reset a password out of the blue."
+  }
+]
