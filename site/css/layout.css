@@ -80,3 +80,9 @@ main { flex: 1; min-width: 0; display: flex; min-height: 0; }
   .folders-head { display: none; }
   .app.split .pane-list { width: var(--list-w); }
 }
+
+/* Persistent page credit line (bottom of every page) */
+.credit { flex: none; text-align: center; font-size: var(--fs-xs); color: var(--text-muted);
+  padding: 6px calc(var(--sp-3) + env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) calc(var(--sp-3) + env(safe-area-inset-left));
+  border-top: 1px solid var(--border); background: var(--surface); letter-spacing: .01em; }
+@media (min-width: 720px) { .credit { padding-bottom: 6px; } }
