@@ -10,11 +10,31 @@
     "subject": "URGENT: Confidential Vendor Settlement Required Today",
     "preview": "I am currently locked in urgent board negotiations and cannot take calls. We need to settle an emergency invoice...",
     "body_html": "<p>Team,</p>\n<p>I am currently locked in urgent board negotiations and cannot take calls. We need to settle an emergency invoice with our primary hardware vendor immediately to avoid supply chain termination.</p>\n<p id=\"urgency\">Please wire $48,500 to the escrow account details provided in the secure portal link below within the next 2 hours. Do not discuss this with local finance yet to maintain confidentiality.</p>\n<p><button data-link=\"portal\" id=\"cta-link\">Access Secure Escrow Portal &amp; Authorize Payment</button></p>",
-    "links": [{ "id": "portal", "real_url": "https://corp-secure-auth.example/escrow-portal" }],
+    "links": [
+      {
+        "id": "portal",
+        "real_url": "https://corp-secure-auth.example/escrow-portal"
+      }
+    ],
     "red_flags": [
-      { "n": 1, "title": "External Lookalike Domain", "explanation": "Uses a typo-squatted domain (corp-secure-auth.example) rather than the corporate domain.", "target": "header-from" },
-      { "n": 2, "title": "Urgency & Secrecy", "explanation": "Pressures the target to bypass standard multi-person financial controls and keep the request secret from colleagues.", "target": "urgency" },
-      { "n": 3, "title": "Generic Call to Action", "explanation": "Generic anchor text pointing to an external credential-harvesting or credential-stuffing landing page.", "target": "cta-link" }
+      {
+        "n": 1,
+        "title": "External Lookalike Domain",
+        "explanation": "Uses a typo-squatted domain (corp-secure-auth.example) rather than the corporate domain.",
+        "target": "header-from"
+      },
+      {
+        "n": 2,
+        "title": "Urgency & Secrecy",
+        "explanation": "Pressures the target to bypass standard multi-person financial controls and keep the request secret from colleagues.",
+        "target": "urgency"
+      },
+      {
+        "n": 3,
+        "title": "Generic Call to Action",
+        "explanation": "Generic anchor text pointing to an external credential-harvesting or credential-stuffing landing page.",
+        "target": "cta-link"
+      }
     ],
     "what_to_do": [
       "Stop. A genuine executive will not ask you to bypass finance controls or keep a payment secret.",
@@ -34,11 +54,31 @@
     "subject": "Action Required: Mandatory Multi-Factor Authentication (MFA) Re-Registration",
     "preview": "As part of our enterprise security hardening schedule following recent threat intelligence bulletins, all employees must re-verify...",
     "body_html": "<p>Dear Employee,</p>\n<p id=\"deadline\">As part of our enterprise security hardening schedule following recent threat intelligence bulletins, all employees must re-verify their authentication tokens within 24 hours. Failure to update will result in account suspension and loss of email access.</p>\n<p>Click below to sync your hardware token or authenticator app:</p>\n<p><button data-link=\"verify\" id=\"cta-link\">Verify &amp; Sync Authentication Token Now</button></p>",
-    "links": [{ "id": "verify", "real_url": "https://defender-auth-alerts.example/verify" }],
+    "links": [
+      {
+        "id": "verify",
+        "real_url": "https://defender-auth-alerts.example/verify"
+      }
+    ],
     "red_flags": [
-      { "n": 1, "title": "Suspicious Sender Infrastructure", "explanation": "Hosted on an unrelated external domain (defender-auth-alerts.example).", "target": "header-from" },
-      { "n": 2, "title": "Coercive Deadlines", "explanation": "Threatens account lockout to trigger panic and quick compliance.", "target": "deadline" },
-      { "n": 3, "title": "Credential Harvesting Link", "explanation": "Directs users away from the legitimate internal IDP login portal to an external harvesting clone.", "target": "cta-link" }
+      {
+        "n": 1,
+        "title": "Suspicious Sender Infrastructure",
+        "explanation": "Hosted on an unrelated external domain (defender-auth-alerts.example).",
+        "target": "header-from"
+      },
+      {
+        "n": 2,
+        "title": "Coercive Deadlines",
+        "explanation": "Threatens account lockout to trigger panic and quick compliance.",
+        "target": "deadline"
+      },
+      {
+        "n": 3,
+        "title": "Credential Harvesting Link",
+        "explanation": "Directs users away from the legitimate internal IDP login portal to an external harvesting clone.",
+        "target": "cta-link"
+      }
     ],
     "what_to_do": [
       "Never re-register MFA from a link in an email. Open your authenticator or sign-in portal the way you normally do.",
@@ -57,11 +97,26 @@
     "date_label": "Today",
     "subject": "Critical Notice: Enterprise Software Subscription Expiring Today",
     "preview": "Your department's annual enterprise software license agreement has expired due to a billing failure...",
-    "attachments": [{ "name": "Enterprise_License_Agreement_2026_Update.iso", "size": "3.4 MB" }],
+    "attachments": [
+      {
+        "name": "Enterprise_License_Agreement_2026_Update.iso",
+        "size": "3.4 MB"
+      }
+    ],
     "body_html": "<p>Hello Administrator,</p>\n<p id=\"disruption\">Your department's annual enterprise software license agreement has expired due to a billing failure. To prevent disruption to your design and documentation workflows, please review and execute the attached updated licensing agreement script.</p>",
     "red_flags": [
-      { "n": 1, "title": "Malicious File Attachment", "explanation": "Uses an ISO or archived executable container designed to bypass email gateway macro inspection and drop remote-access trojans or infostealer payloads.", "target": "attachment" },
-      { "n": 2, "title": "Urgently Framed Business Disruption", "explanation": "Leverages common enterprise software names to induce quick downloading without security scrutiny.", "target": "disruption" }
+      {
+        "n": 1,
+        "title": "Malicious File Attachment",
+        "explanation": "Uses an ISO or archived executable container designed to bypass email gateway macro inspection and drop remote-access trojans or infostealer payloads.",
+        "target": "attachment"
+      },
+      {
+        "n": 2,
+        "title": "Urgently Framed Business Disruption",
+        "explanation": "Leverages common enterprise software names to induce quick downloading without security scrutiny.",
+        "target": "disruption"
+      }
     ],
     "what_to_do": [
       "Do not open .iso or other executable or archive attachments you were not expecting.",
@@ -80,7 +135,12 @@
     "date_label": "9 Nov 2026",
     "subject": "Updated Remote Work Expense Guidelines for Q4",
     "preview": "Please review the updated Q4 remote work and office equipment expense policy attached to this email.",
-    "attachments": [{ "name": "Q4_Expense_Guidelines_2026.pdf", "size": "214 KB" }],
+    "attachments": [
+      {
+        "name": "Q4_Expense_Guidelines_2026.pdf",
+        "size": "214 KB"
+      }
+    ],
     "body_html": "<p>Hi Everyone,</p>\n<p>Please review the updated Q4 remote work and office equipment expense policy attached to this email. The internal finance wiki has also been updated with the new submission codes. If you have any questions, reach out via our internal Slack channel <code>#hr-support</code>.</p>",
     "safe_reasons": [
       "Internal Domain Alignment: Sent entirely from the verified internal corporate domain (brightlinecorp.example).",
@@ -127,7 +187,12 @@
     "subject": "Daily Automated Threat Intelligence & Ransomware Briefing",
     "preview": "Today's cross-sector briefing covering edge device zero-days and container OpenSSH audits has been generated.",
     "body_html": "<p>Automated Security Operations Briefing:</p>\n<p>Today's cross-sector briefing covering edge device zero-days (such as Veltra CVE-2026-107441) and container OpenSSH audits has been successfully generated and synchronized to your secure Brightline Drive folder and master CSV log.</p>\n<p><button data-link=\"drive\" id=\"drive-link\">View Shared Brightline Drive Folder</button></p>",
-    "links": [{ "id": "drive", "real_url": "https://drive.brightlinecorp.example/secops/briefings" }],
+    "links": [
+      {
+        "id": "drive",
+        "real_url": "https://drive.brightlinecorp.example/secops/briefings"
+      }
+    ],
     "safe_reasons": [
       "Contextual Consistency: Aligned with internal engineering workflows, utilizing trusted internal automation pipelines and verified cloud storage endpoints."
     ],
@@ -137,5 +202,447 @@
       "Stay aware that attackers imitate this style, so still check the sender and destination before acting on any 'briefing'."
     ],
     "lesson": "Expected, context-appropriate automation from your own internal systems is the normal background hum of a secure workplace."
+  },
+  {
+    "id": "e-invoice-change",
+    "technique": "vendor-invoice-fraud",
+    "is_phish": true,
+    "from_name": "Novexa Supplies — Accounts",
+    "from_address": "accounts@novexa-supplies.example",
+    "reply_to": "remittance@novexa-supplies-billing.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Updated remittance details for invoice INV-20451",
+    "preview": "Please note our banking details have recently changed. Kindly update your records before settling the attached invoice...",
+    "attachments": [
+      {
+        "name": "Invoice_INV-20451_Revised.pdf",
+        "size": "88 KB"
+      }
+    ],
+    "body_html": "<p>Dear Accounts Payable,</p>\n<p id=\"bankchange\">Please note our banking details have recently changed. Kindly update your records and remit payment for the attached invoice (INV-20451, $21,480.00) to our new account below before the due date to avoid a late fee.</p>\n<p><strong>New account:</strong> Sort 40-21-09 &middot; Acct 7781254490 &middot; Ref INV-20451</p>\n<p>Apologies for any inconvenience. Kindly confirm once your records are updated.</p>",
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "Change of bank details",
+        "explanation": "A supplier emailing new payment details out of the blue is the most common form of invoice fraud. The attacker has spoofed or taken over the vendor's email.",
+        "target": "bankchange"
+      },
+      {
+        "n": 2,
+        "title": "Reply-to does not match the sender",
+        "explanation": "Replies would go to a different, lookalike billing domain, not the address the mail claims to be from.",
+        "target": "header-replyto"
+      },
+      {
+        "n": 3,
+        "title": "Pressure to pay quickly",
+        "explanation": "The 'before the due date to avoid a late fee' line is there to rush the change through before anyone checks.",
+        "target": "bankchange"
+      }
+    ],
+    "what_to_do": [
+      "Never change a supplier's bank details on an email instruction alone.",
+      "Call the vendor on a number you already have on file (not one from this email) to confirm any change.",
+      "Require a second approver for payment-detail changes, and report this message."
+    ],
+    "lesson": "A new bank account in an email is the signature of invoice fraud. Verify every payment-detail change out of band, on a trusted number."
+  },
+  {
+    "id": "e-qr-mfa",
+    "technique": "quishing",
+    "is_phish": true,
+    "from_name": "IT Security",
+    "from_address": "security-alert@brightlinecorp-it.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Action needed: re-validate your authenticator within 24 hours",
+    "preview": "Scan the code below with your phone to re-validate your multi-factor authentication. Unvalidated accounts will be suspended...",
+    "body_html": "<p>Dear Employee,</p>\n<p id=\"qr-urgency\">Our records show your multi-factor authentication needs to be re-validated. Scan the QR code below with your phone's camera and follow the steps. Accounts not validated within 24 hours will be suspended.</p>\n<p><img id=\"qr-code\" src=\"assets/qr-quishing.svg\" alt=\"QR code to scan with your phone\" width=\"150\" height=\"150\"></p>\n<p>Thank you for helping keep our systems secure.</p>",
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "A QR code hides the real link",
+        "explanation": "You cannot read where a QR code goes before you scan it, and it moves you onto your phone, away from your computer's protections. That is exactly why attackers use them.",
+        "target": "qr-code"
+      },
+      {
+        "n": 2,
+        "title": "Lookalike sender domain",
+        "explanation": "Real IT security mail comes from your own domain, not brightlinecorp-it.example.",
+        "target": "header-from"
+      },
+      {
+        "n": 3,
+        "title": "Lockout deadline",
+        "explanation": "'Suspended within 24 hours' is pressure to make you scan before you think.",
+        "target": "qr-urgency"
+      }
+    ],
+    "what_to_do": [
+      "Don't scan QR codes in emails. Re-validate MFA from inside your authenticator app the way you normally do.",
+      "If you're unsure, check with IT through a channel you already trust.",
+      "Remember a QR code is just a link you can't see, so treat it with the same caution as any link."
+    ],
+    "lesson": "Quishing puts a link you can't preview onto a phone outside corporate protection. Don't scan codes from email; act inside the real app."
+  },
+  {
+    "id": "e-payroll-redirect",
+    "technique": "payroll-diversion",
+    "is_phish": true,
+    "from_name": "Marcus Bell",
+    "from_address": "marcus.bell.payroll@secure-mailbox.example",
+    "reply_to": "marcus.bell.payroll@secure-mailbox.example",
+    "to": "payroll@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Change to my direct deposit account",
+    "preview": "Hi, I've recently switched banks. Please update my direct deposit to the new account below effective this pay cycle...",
+    "body_html": "<p>Hi Payroll,</p>\n<p id=\"dd-change\">I've recently switched banks. Please update my direct deposit to the new account below, effective this pay cycle, so my salary isn't delayed.</p>\n<p><strong>New account:</strong> Routing 021000021 &middot; Account 554120983</p>\n<p>Please confirm once it's done. Thanks,<br>Marcus Bell</p>",
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "Request comes from outside the company",
+        "explanation": "A genuine employee's request would come from their corporate account, not an outside secure-mailbox.example address.",
+        "target": "header-from"
+      },
+      {
+        "n": 2,
+        "title": "Direct-deposit change by email",
+        "explanation": "Changing where someone's salary is paid, with no identity check, is exactly what payroll-diversion fraud wants.",
+        "target": "dd-change"
+      },
+      {
+        "n": 3,
+        "title": "Pressure to beat this pay cycle",
+        "explanation": "The deadline exists so the money is redirected before the real employee notices.",
+        "target": "dd-change"
+      }
+    ],
+    "what_to_do": [
+      "Verify any direct-deposit change with the employee in person or on a number from your own HR records.",
+      "Never action a banking change from an email alone, especially from an outside address.",
+      "Report it; the real employee's identity may be being impersonated."
+    ],
+    "lesson": "Payroll diversion redirects a real person's salary with a single emailed 'bank change'. Always verify the employee through a known channel first."
+  },
+  {
+    "id": "e-voicemail-captcha",
+    "technique": "voicemail-phishing",
+    "is_phish": true,
+    "from_name": "Voicemail Service",
+    "from_address": "no-reply@unified-voicemail.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "New voicemail from (800) 555-0188 — duration 00:42",
+    "preview": "You have received a new voice message. Sign in to the secure portal to listen before it is deleted...",
+    "body_html": "<p>You have received a new voice message.</p>\n<p>Caller: (800) 555-0188 &middot; Duration: 00:42 &middot; Received today.</p>\n<p id=\"vm-body\">Sign in to the secure portal to listen. Unheard messages are deleted after 48 hours. You may be asked to complete a quick security check to continue.</p>\n<p><button data-link=\"vm\" id=\"cta-link\">Listen to your message</button></p>",
+    "links": [
+      {
+        "id": "vm",
+        "real_url": "https://unified-voicemail-portal.example/listen"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "Unexpected voicemail by email",
+        "explanation": "A link to 'listen' to a voicemail, from an outside service you don't use, leads to a fake sign-in page, not a message.",
+        "target": "cta-link"
+      },
+      {
+        "n": 2,
+        "title": "The 'security check' is a cloak",
+        "explanation": "The promised CAPTCHA or 'security check' is there to make the page feel legitimate and to hide it from automated scanners.",
+        "target": "vm-body"
+      },
+      {
+        "n": 3,
+        "title": "Outside sender and deletion deadline",
+        "explanation": "An unfamiliar external domain plus a '48 hours or deleted' deadline is pressure to click fast.",
+        "target": "header-from"
+      }
+    ],
+    "what_to_do": [
+      "Listen to voicemail through your actual phone or your company's real voicemail system, never a link in an email.",
+      "A CAPTCHA or 'security check' before a login is a trick to make a fake page look real; it is not reassurance.",
+      "Don't click, and report the message."
+    ],
+    "lesson": "A 'you have a voicemail' email with a sign-in link is credential phishing. The CAPTCHA step is camouflage, not safety."
+  },
+  {
+    "id": "e-esign-contract",
+    "technique": "esignature-phishing",
+    "is_phish": true,
+    "from_name": "SignFlow",
+    "from_address": "no-reply@signflow-docs.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "You have a document to review and sign: Q4 Vendor Agreement",
+    "preview": "A document is waiting for your signature. Review and sign before the request expires in 48 hours...",
+    "body_html": "<p>Hello,</p>\n<p id=\"esign-body\">A document, <strong>Q4 Vendor Agreement</strong>, is waiting for your electronic signature. Please review and sign before this request expires in 48 hours.</p>\n<p><button data-link=\"sign\" id=\"cta-link\">Review &amp; sign document</button></p>\n<p class=\"small\">If you believe you received this in error, no action is needed.</p>",
+    "links": [
+      {
+        "id": "sign",
+        "real_url": "https://signflow-docs.example/auth/review"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "A document you weren't expecting",
+        "explanation": "E-signature lures count on you clicking quickly so a contract isn't held up. If you weren't expecting it, be suspicious.",
+        "target": "esign-body"
+      },
+      {
+        "n": 2,
+        "title": "Link leads to a sign-in, not a document",
+        "explanation": "The button goes to an external sign-in page built to capture your password, not to a real signing service.",
+        "target": "cta-link"
+      },
+      {
+        "n": 3,
+        "title": "Expiry countdown",
+        "explanation": "'Expires in 48 hours' is manufactured urgency.",
+        "target": "esign-body"
+      }
+    ],
+    "what_to_do": [
+      "Only open signing requests you're expecting, and go to the signing service directly rather than via the email link.",
+      "Check who the sender really is; a genuine request names a person and context you recognise.",
+      "If in doubt, confirm with the supposed sender on a known channel."
+    ],
+    "lesson": "Fake e-signature requests exploit the habit of signing fast. Open them only when expected, and reach the service directly."
+  },
+  {
+    "id": "e-shared-doc",
+    "technique": "shared-file-phishing",
+    "is_phish": true,
+    "from_name": "Brightline Drive",
+    "from_address": "share-noreply@brightline-drive-share.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "A file has been shared with you: 2026 Bonus Structure.xlsx",
+    "preview": "Someone shared a document with you. Open it to view the file...",
+    "body_html": "<p>A file has been shared with you.</p>\n<p id=\"share-body\"><strong>2026 Bonus Structure.xlsx</strong> &middot; shared just now</p>\n<p><button data-link=\"open\" id=\"cta-link\">Open document</button></p>\n<p class=\"small\">You are receiving this because a document was shared with your address.</p>",
+    "links": [
+      {
+        "id": "open",
+        "real_url": "https://brightline-drive-share.example/open?id=9f2a"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "A too-tempting filename",
+        "explanation": "'Bonus Structure' is bait: curiosity about pay makes people click before they think.",
+        "target": "share-body"
+      },
+      {
+        "n": 2,
+        "title": "Not your real drive",
+        "explanation": "The share comes from an outside lookalike domain, not the file service your company actually uses.",
+        "target": "header-from"
+      },
+      {
+        "n": 3,
+        "title": "No named sharer",
+        "explanation": "A genuine share names the person who shared it; 'someone shared a file' is a red flag, and the button leads to a fake sign-in.",
+        "target": "cta-link"
+      }
+    ],
+    "what_to_do": [
+      "Open shared files from inside your real file-storage app, not from an email link.",
+      "Check who shared it; if no real person is named, treat it as phishing.",
+      "Be extra wary of lures about pay, bonuses or layoffs; curiosity is the hook."
+    ],
+    "lesson": "Shared-file lures use curiosity and a lookalike drive. Open documents from your real storage app, not an email button."
+  },
+  {
+    "id": "e-gift-card",
+    "technique": "gift-card-scam",
+    "is_phish": true,
+    "from_name": "Dana Whitfield",
+    "from_address": "d.whitfield@brightlinecorp-exec.example",
+    "reply_to": "dana.whitfield.office@fast-reply.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Quick favour — are you available?",
+    "preview": "Are you at your desk? I need you to handle something discreetly for me. I'm in meetings and can't take calls...",
+    "body_html": "<p>Hi,</p>\n<p id=\"giftcard-body\">Are you at your desk? I need you to handle something discreetly. Please pick up five $100 gift cards for a client appreciation gesture and send me the codes by reply. I'm stuck in back-to-back meetings and can't take calls. I'll approve the reimbursement afterwards.</p>\n<p>Thanks,<br>Dana</p>",
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "Lookalike executive address",
+        "explanation": "The 'from' and the reply-to sit on outside lookalike domains, not your real corporate domain.",
+        "target": "header-replyto"
+      },
+      {
+        "n": 2,
+        "title": "Gift cards requested by email",
+        "explanation": "No genuine executive asks staff to buy gift cards and send the codes. This is a classic, and the codes are untraceable cash.",
+        "target": "giftcard-body"
+      },
+      {
+        "n": 3,
+        "title": "Secrecy plus 'can't call'",
+        "explanation": "'Discreetly' and 'can't take calls' exist to stop you verifying with anyone.",
+        "target": "giftcard-body"
+      }
+    ],
+    "what_to_do": [
+      "Treat any gift-card request as a scam, however senior the sender appears.",
+      "Verify through a channel you already trust before acting; a real executive won't mind.",
+      "Report it, so others who got the same message are warned."
+    ],
+    "lesson": "The gift-card ask is one of the most reliable scam tells there is. Verify out of band and report; never buy or send codes."
+  },
+  {
+    "id": "e-clone-reset",
+    "technique": "clone-phishing",
+    "is_phish": true,
+    "from_name": "IT Service Desk",
+    "from_address": "it-servicedesk@brightlinecorp-support.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "RESEND: Password expiry — please use the corrected link",
+    "preview": "Our earlier message contained a broken link. Please use the corrected link below to reset your password before it expires today...",
+    "body_html": "<p>Dear Employee,</p>\n<p id=\"clone-body\">Apologies — our earlier password-expiry email contained a broken link. Please use the corrected link below to reset your password before it expires today.</p>\n<p><button data-link=\"reset\" id=\"cta-link\">Reset your password</button></p>",
+    "links": [
+      {
+        "id": "reset",
+        "real_url": "https://brightlinecorp-support.example/reset"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "The 'resend a corrected link' trick",
+        "explanation": "Clone phishing copies a routine email you half-expect and 'resends' it with the attacker's link. The familiarity is the trap.",
+        "target": "clone-body"
+      },
+      {
+        "n": 2,
+        "title": "Lookalike support domain",
+        "explanation": "The real service desk doesn't send from brightlinecorp-support.example.",
+        "target": "header-from"
+      },
+      {
+        "n": 3,
+        "title": "Reset link in an email",
+        "explanation": "Password resets should start from you, at the known portal, not from a link someone sends.",
+        "target": "cta-link"
+      }
+    ],
+    "what_to_do": [
+      "Reset passwords only by going to your known sign-in portal yourself.",
+      "Be suspicious of 'resend' or 'corrected link' framing; it's used to make a cloned email feel real.",
+      "Check the sender domain and report anything that doesn't match."
+    ],
+    "lesson": "Clone phishing mimics a message you were expecting and swaps in a bad link. Start sensitive actions yourself, from the known portal."
+  },
+  {
+    "id": "e-device-code",
+    "technique": "device-code-phishing",
+    "is_phish": true,
+    "from_name": "IT Support",
+    "from_address": "access@brightlinecorp-verify.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Keep your session active: enter your verification code",
+    "preview": "To avoid being signed out, open the sign-in page and enter the verification code below...",
+    "body_html": "<p>Dear Employee,</p>\n<p id=\"dc-body\">To avoid being signed out during our scheduled maintenance, please open the sign-in page and enter the verification code below to keep your session active.</p>\n<p>Your verification code: <code id=\"dc-code\">BXQ-7421</code></p>\n<p>This prevents an interruption to your access.</p>",
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "You're told to enter a code you didn't ask for",
+        "explanation": "Codes are meant to come to you after you start a sign-in. A code sent to you to type into a login screen means you'd be approving the attacker's device.",
+        "target": "dc-code"
+      },
+      {
+        "n": 2,
+        "title": "Lookalike sender",
+        "explanation": "The sender sits on an outside lookalike domain, not your real IT.",
+        "target": "header-from"
+      },
+      {
+        "n": 3,
+        "title": "'Keep your session active' pressure",
+        "explanation": "The maintenance/lockout story is there to get you to enter the code quickly.",
+        "target": "dc-body"
+      }
+    ],
+    "what_to_do": [
+      "Never enter a code that someone emailed you into a sign-in page.",
+      "Only type a code that you requested yourself, into a login you started.",
+      "Report it; device-code phishing authorises the attacker's device to act as you."
+    ],
+    "lesson": "If an email hands you a code to type into a login, it's device-code phishing. Only ever use codes you asked for, in a sign-in you began."
+  },
+  {
+    "id": "e-tax-refund",
+    "technique": "tax-scam",
+    "is_phish": true,
+    "from_name": "National Revenue Service",
+    "from_address": "refunds@nrs-gov-portal.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Notice: you are eligible for a tax refund of $842.60",
+    "preview": "Our records show you are owed a refund. Confirm your details through our secure portal within 5 business days...",
+    "body_html": "<p>Dear Taxpayer,</p>\n<p id=\"tax-body\">Our records show you are eligible for a refund of <strong>$842.60</strong>. To receive it, confirm your identity and bank details through our secure portal within 5 business days, or the refund will be forfeited.</p>\n<p><button data-link=\"refund\" id=\"cta-link\">Claim your refund</button></p>",
+    "links": [
+      {
+        "id": "refund",
+        "real_url": "https://nrs-gov-portal.example/claim"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "Tax agencies don't email refunds like this",
+        "explanation": "Real tax bodies contact you by official post and don't ask you to 'claim' a refund through an emailed link.",
+        "target": "tax-body"
+      },
+      {
+        "n": 2,
+        "title": "Unofficial domain",
+        "explanation": "nrs-gov-portal.example is not an official government domain; it's built to harvest your identity and bank details.",
+        "target": "header-from"
+      },
+      {
+        "n": 3,
+        "title": "'Forfeit in 5 days' pressure",
+        "explanation": "A countdown with a threat of losing money is designed to override your caution.",
+        "target": "cta-link"
+      }
+    ],
+    "what_to_do": [
+      "Never claim a refund through a link in an email.",
+      "Go to the tax authority's official website yourself, or call them on a number you look up independently.",
+      "Delete and report; a real refund never depends on you acting within days."
+    ],
+    "lesson": "Refund and 'overdue tax' emails impersonate authorities to harvest identity and bank details. Use the official site directly, never the email's link."
+  },
+  {
+    "id": "e-benefits-enrollment",
+    "technique": "genuine-internal-mail",
+    "is_phish": false,
+    "from_name": "Brightline People Team",
+    "from_address": "people@brightlinecorp.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Open enrollment for 2027 benefits starts Monday",
+    "preview": "Open enrollment runs 16-30 November. Review your options on the intranet benefits portal. No action needed if you're keeping your current plan...",
+    "body_html": "<p>Hi everyone,</p>\n<p>Open enrollment for 2027 benefits runs from <strong>16-30 November</strong>. You can review your options and make any changes on the benefits portal, which is linked from the People page on the intranet.</p>\n<p>No action is needed if you're keeping your current plan. Questions? Ask in the <code>#people-help</code> channel and someone will help.</p>",
+    "safe_reasons": [
+      "Internal Domain Alignment: Sent from the verified internal corporate domain (brightlinecorp.example).",
+      "No Credential Pressure: Points you to the intranet you already use rather than a link to sign in, and asks for nothing secret.",
+      "Alternative Contact Channel: Directs questions to a known internal channel, with a clear deadline but no threat."
+    ],
+    "what_to_do": [
+      "This is safe to act on. Reach the benefits portal through the intranet the way you normally do.",
+      "If you're keeping your current plan, you don't need to do anything.",
+      "Genuine HR notices give you a deadline and a helpful channel, never a threat or a login link."
+    ],
+    "lesson": "A notice from your real internal domain that points you to the intranet and asks for nothing secret is what genuine internal mail looks like."
   }
 ]

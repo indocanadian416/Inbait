@@ -7,7 +7,10 @@
     "category": "Voice",
     "severity": "high",
     "technique": "vishing",
-    "practice": { "type": "call", "id": "call-refund-callback" }
+    "practice": {
+      "type": "call",
+      "id": "call-refund-callback"
+    }
   },
   {
     "id": "r-clickfix-captcha",
@@ -17,7 +20,10 @@
     "category": "Browser",
     "severity": "high",
     "technique": "clickfix",
-    "practice": { "type": "browser", "id": "b-clickfix-captcha" }
+    "practice": {
+      "type": "browser",
+      "id": "b-clickfix-captcha"
+    }
   },
   {
     "id": "r-consent-phishing",
@@ -27,7 +33,10 @@
     "category": "Account",
     "severity": "high",
     "technique": "consent-phishing",
-    "practice": { "type": "browser", "id": "b-oauth-consent" }
+    "practice": {
+      "type": "browser",
+      "id": "b-oauth-consent"
+    }
   },
   {
     "id": "r-invoice-bec",
@@ -37,7 +46,10 @@
     "category": "Email",
     "severity": "high",
     "technique": "executive-impersonation",
-    "practice": { "type": "email", "id": "e-vendor-wire" }
+    "practice": {
+      "type": "email",
+      "id": "e-vendor-wire"
+    }
   },
   {
     "id": "r-parcel-smishing",
@@ -47,7 +59,10 @@
     "category": "Text",
     "severity": "medium",
     "technique": "smishing",
-    "practice": { "type": "text", "id": "t-parcel-fee" }
+    "practice": {
+      "type": "text",
+      "id": "t-parcel-fee"
+    }
   },
   {
     "id": "r-mfa-fatigue",
@@ -60,12 +75,16 @@
   },
   {
     "id": "r-quishing",
-    "date": "2026-11-01",
+    "date": "2026-11-11",
     "title": "QR codes in emails and letters are hiding phishing links",
-    "summary": "Quishing moves you onto a personal phone, outside corporate filtering, and hides the real destination. Preview the link before opening, and be wary of QR codes that lead to a login or payment.",
+    "summary": "QR codes in emails hide the real link and push you onto a personal phone outside corporate filtering. Quishing is now the fastest-growing email attack. Don't scan codes from email; re-validate inside the real app.",
     "category": "QR",
-    "severity": "medium",
-    "technique": "quishing"
+    "severity": "high",
+    "technique": "quishing",
+    "practice": {
+      "type": "email",
+      "id": "e-qr-mfa"
+    }
   },
   {
     "id": "r-fake-update",
@@ -75,7 +94,10 @@
     "category": "Browser",
     "severity": "medium",
     "technique": "fake-updates",
-    "practice": { "type": "browser", "id": "b-fake-update" }
+    "practice": {
+      "type": "browser",
+      "id": "b-fake-update"
+    }
   },
   {
     "id": "r-fake-helpdesk",
@@ -85,6 +107,61 @@
     "category": "Chat",
     "severity": "medium",
     "technique": "fake-helpdesk",
-    "practice": { "type": "chat", "id": "c-fake-helpdesk" }
+    "practice": {
+      "type": "chat",
+      "id": "c-fake-helpdesk"
+    }
+  },
+  {
+    "id": "r-vendor-invoice",
+    "date": "2026-11-11",
+    "title": "Suppliers' \"we changed our bank details\" emails are draining payments",
+    "summary": "Vendor-invoice fraud is the most common form of business email compromise: a spoofed or hijacked supplier sends a new bank account for the next invoice. Never change payment details on an email; verify on a known number and require a second approver.",
+    "category": "Email",
+    "severity": "high",
+    "technique": "vendor-invoice-fraud",
+    "practice": {
+      "type": "email",
+      "id": "e-invoice-change"
+    }
+  },
+  {
+    "id": "r-payroll-diversion",
+    "date": "2026-11-10",
+    "title": "Fake \"please update my direct deposit\" emails are redirecting salaries",
+    "summary": "Payroll diversion impersonates an employee and asks HR to change their direct-deposit account, sending the next paycheck to the attacker. Verify any banking change with the employee through a known channel before actioning it.",
+    "category": "Email",
+    "severity": "high",
+    "technique": "payroll-diversion",
+    "practice": {
+      "type": "email",
+      "id": "e-payroll-redirect"
+    }
+  },
+  {
+    "id": "r-captcha-voicemail",
+    "date": "2026-11-09",
+    "title": "CAPTCHA-gated phishing pages are hiding behind \"you have a voicemail\"",
+    "summary": "Attackers put a fake CAPTCHA in front of credential-harvesting pages so scanners stop probing and victims feel safe, often lured by a voicemail or invoice notification. A CAPTCHA before a login is camouflage, not reassurance.",
+    "category": "Email",
+    "severity": "high",
+    "technique": "voicemail-phishing",
+    "practice": {
+      "type": "email",
+      "id": "e-voicemail-captcha"
+    }
+  },
+  {
+    "id": "r-device-code",
+    "date": "2026-11-08",
+    "title": "\"Enter this code to stay signed in\" emails are a new MFA bypass",
+    "summary": "Device-code phishing hands you a code to type into a real sign-in page; entering it authorises the attacker's device as you, sidestepping MFA. Only use codes you requested yourself, in a login you started.",
+    "category": "Account",
+    "severity": "high",
+    "technique": "device-code-phishing",
+    "practice": {
+      "type": "email",
+      "id": "e-device-code"
+    }
   }
 ]
