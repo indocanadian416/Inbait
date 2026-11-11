@@ -78,5 +78,50 @@
     "slug": "mfa-fatigue",
     "title": "MFA fatigue (push bombing)",
     "summary": "After stealing your password, an attacker triggers a flood of multi-factor approval prompts hoping you tap Approve just to make them stop. A prompt you did not start is a sign your password is already known. Deny every unexpected prompt and change your password."
+  },
+  {
+    "slug": "vendor-invoice-fraud",
+    "title": "Vendor invoice fraud",
+    "summary": "Attackers spoof or take over a supplier's email and send an invoice with 'updated' bank details, aiming the next payment at their own account. It is the most common form of business email compromise. Never change a vendor's payment details on an email alone; confirm every change on a number you already hold and require a second approver."
+  },
+  {
+    "slug": "payroll-diversion",
+    "title": "Payroll diversion",
+    "summary": "A message posing as an employee asks HR or payroll to change their direct-deposit account, redirecting that person's salary to the attacker. Verify any banking change with the employee in person or on a known number before actioning it, and never act on an outside email address."
+  },
+  {
+    "slug": "voicemail-phishing",
+    "title": "Fake voicemail notifications",
+    "summary": "An email claims you have a voicemail and links to a 'secure portal' to listen, which is really a sign-in page that steals your password. A CAPTCHA or 'security check' is often added to make the fake page look trustworthy and hide it from scanners. Listen to voicemail through your real phone system, never an email link."
+  },
+  {
+    "slug": "esignature-phishing",
+    "title": "Fake e-signature requests",
+    "summary": "A message mimics a document-signing service and pushes you to 'review and sign' before it expires, sending you to a fake login. People sign quickly to avoid holding up a contract, which is exactly the habit it exploits. Open signing requests only when expected, and go to the service directly."
+  },
+  {
+    "slug": "shared-file-phishing",
+    "title": "Fake shared-file notices",
+    "summary": "A notification says a document has been shared with you, often with a tempting name like a bonus or salary file, and links to a fake sign-in. Genuine shares name the person who shared them and open in your real storage app. Open shared files from the app itself, and be wary of curiosity lures."
+  },
+  {
+    "slug": "gift-card-scam",
+    "title": "Gift card requests",
+    "summary": "A message posing as an executive asks you to buy gift cards and send the codes, usually 'discreetly' and with 'I can't take calls'. The codes are untraceable cash. No real leader asks for this; treat any gift-card request as a scam and verify through a channel you already trust."
+  },
+  {
+    "slug": "clone-phishing",
+    "title": "Clone phishing",
+    "summary": "Attackers copy a routine message you half-expect, then 'resend' it with a 'corrected' link that is malicious. The familiarity is the trap. Start sensitive actions like password resets yourself, from the portal you already know, rather than following a link that was sent to you."
+  },
+  {
+    "slug": "device-code-phishing",
+    "title": "Device-code phishing",
+    "summary": "You are told to enter a code on a real sign-in page to 'keep your session active'. Codes are meant to come to you after you start a sign-in; a code sent for you to type in actually authorises the attacker's device to act as you. Only ever use codes you requested yourself, in a login you began."
+  },
+  {
+    "slug": "tax-scam",
+    "title": "Tax and refund scams",
+    "summary": "Emails impersonate a tax authority with an overdue-tax threat or a refund you can 'claim' through a link, harvesting your identity and bank details. Real agencies contact you by official post and never ask you to claim a refund via an emailed link. Use the official website directly, and never act on a short deadline."
   }
 ]
