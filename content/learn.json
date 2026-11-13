@@ -123,5 +123,10 @@
     "slug": "tax-scam",
     "title": "Tax and refund scams",
     "summary": "Emails impersonate a tax authority with an overdue-tax threat or a refund you can 'claim' through a link, harvesting your identity and bank details. Real agencies contact you by official post and never ask you to claim a refund via an emailed link. Use the official website directly, and never act on a short deadline."
+  },
+  {
+    "slug": "outage-phishing",
+    "title": "Outage and incident lures",
+    "summary": "Right after a well-known outage or breach, attackers flood inboxes with 'service credit', 're-verify your account', 'recovery tool' and 'priority restore' emails, because everyone is expecting contact and willing to act fast. A real provider fixes an outage on its own: it does not need you to sign in through a link, run a tool, or hand over billing details to restore service. Check the official status page you already know, and act only inside the real app."
   }
 ]
