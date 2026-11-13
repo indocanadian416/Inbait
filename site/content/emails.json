@@ -1,5 +1,185 @@
 [
   {
+    "id": "e-outage-service-credit",
+    "technique": "outage-phishing",
+    "is_phish": true,
+    "from_name": "Brightline 365 Billing",
+    "from_address": "billing@brightline365-credits.example",
+    "reply_to": "claims@bl365-service-credits.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Service credit for the November 12 outage — confirm within 48 hours",
+    "preview": "Following the recent service disruption, we are issuing account credits to affected users. Confirm your details to receive yours...",
+    "attachments": [],
+    "body_html": "<p>Dear Customer,</p>\n<p id=\"outage-hook\">Following the service disruption on November 12 that affected mail, chat and file access, we are issuing a goodwill service credit to all affected accounts.</p>\n<p>To receive your credit, please confirm your account and billing details within 48 hours. Unconfirmed accounts will not be credited.</p>\n<p><button data-link=\"claim\" id=\"cta-link\">Claim your service credit</button></p>",
+    "links": [
+      {
+        "id": "claim",
+        "real_url": "https://brightline365-credits.example/claim"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "The outage used as the hook",
+        "explanation": "Attackers rush out 'compensation' emails right after a well-known outage, while everyone is expecting contact and feeling owed something. The timing is the trap.",
+        "target": "outage-hook"
+      },
+      {
+        "n": 2,
+        "title": "Asks for billing details via a link",
+        "explanation": "A real provider already has your billing on file and credits it automatically. Being sent to a page to 'confirm' card details is harvesting, not a refund.",
+        "target": "cta-link"
+      },
+      {
+        "n": 3,
+        "title": "Reply-to doesn't match the sender",
+        "explanation": "The reply address sits on a different lookalike domain from the 'from' line.",
+        "target": "header-replyto"
+      }
+    ],
+    "what_to_do": [
+      "Don't claim outage 'credits' through an email link. Any genuine credit appears on your next bill automatically.",
+      "Check the provider's official status page, which you reach yourself, for what really happened.",
+      "Report it; a wave of these always follows a big outage."
+    ],
+    "lesson": "After every major outage comes a wave of 'service credit' and 'compensation' lures. Real credits are automatic; a link asking for billing details is a scam."
+  },
+  {
+    "id": "e-outage-reauth",
+    "technique": "outage-phishing",
+    "is_phish": true,
+    "from_name": "Brightline 365 Security",
+    "from_address": "no-reply@brightline365-verify.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Re-verify your account to restore access after the outage",
+    "preview": "As part of recovery from the November 12 outage, affected accounts must be re-verified before access is fully restored...",
+    "attachments": [],
+    "body_html": "<p>Dear User,</p>\n<p id=\"reauth-body\">As part of our recovery from the November 12 service outage, affected accounts must be re-verified before access is fully restored. For your security, sign in to confirm your identity.</p>\n<p>Accounts not re-verified within 24 hours will remain suspended.</p>\n<p><button data-link=\"verify\" id=\"cta-link\">Re-verify my account</button></p>",
+    "links": [
+      {
+        "id": "verify",
+        "real_url": "https://brightline365-verify.example/signin"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "Outage used to justify a sign-in",
+        "explanation": "An outage never requires you to re-verify or re-enter your password. Recovery happens on the provider's side, not by making users log in through a link.",
+        "target": "reauth-body"
+      },
+      {
+        "n": 2,
+        "title": "Lookalike sign-in domain",
+        "explanation": "The sign-in link goes to an outside lookalike domain built to capture your password, not your real provider.",
+        "target": "cta-link"
+      },
+      {
+        "n": 3,
+        "title": "24-hour suspension threat",
+        "explanation": "The lockout deadline is pressure to make you sign in before you think.",
+        "target": "header-from"
+      }
+    ],
+    "what_to_do": [
+      "Never re-verify or sign in from an outage email. Open the app the way you normally do.",
+      "If access really is affected, it comes back on its own as the provider restores service.",
+      "Check the official status page yourself, and report this message."
+    ],
+    "lesson": "\"Re-verify your account after the outage\" is credential phishing. Outages are fixed by the provider; they never need you to log in through a link."
+  },
+  {
+    "id": "e-outage-recovery-tool",
+    "technique": "outage-phishing",
+    "is_phish": true,
+    "from_name": "IT Service Desk",
+    "from_address": "it-recovery@brightlinecorp-support.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Action: run the Outage Recovery Assistant to resync your mailbox",
+    "preview": "Mail delayed by the November 12 outage can be resynced using the recovery assistant attached. Download and run it to restore missing messages...",
+    "attachments": [
+      {
+        "name": "Outage_Recovery_Assistant.exe",
+        "size": "4.2 MB"
+      }
+    ],
+    "body_html": "<p>Dear Employee,</p>\n<p id=\"tool-body\">Some mail was delayed during the November 12 outage. To restore any missing messages, download and run the Outage Recovery Assistant attached, then let it resync your mailbox.</p>\n<p>Please run it today so your inbox is fully caught up.</p>",
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "An executable 'recovery tool'",
+        "explanation": "A .exe attached to an outage email is malware. No real recovery needs you to download and run a program a mailbox resyncs itself on the server.",
+        "target": "attachment"
+      },
+      {
+        "n": 2,
+        "title": "Outage used to justify running it",
+        "explanation": "The outage story is there to make a dangerous download feel urgent and reasonable.",
+        "target": "tool-body"
+      },
+      {
+        "n": 3,
+        "title": "Lookalike support domain",
+        "explanation": "The real service desk doesn't send from brightlinecorp-support.example.",
+        "target": "header-from"
+      }
+    ],
+    "what_to_do": [
+      "Never download or run 'recovery', 'patch' or 'resync' tools sent by email, especially .exe, .iso or script files.",
+      "Mail delayed by an outage catches up on its own once service is restored.",
+      "If you ran it, disconnect and contact IT immediately; report the message either way."
+    ],
+    "lesson": "Outage 'recovery tools' are malware in a helpful disguise. Delayed mail resyncs itself; you never need to run a program to fix an outage."
+  },
+  {
+    "id": "e-outage-priority",
+    "technique": "outage-phishing",
+    "is_phish": true,
+    "from_name": "Cloud Operations",
+    "from_address": "noc@cloud-status-updates.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Your mailbox is still in the outage backlog — request priority restore",
+    "preview": "Some mailboxes remain in the restoration backlog after the November 12 outage. Verify ownership to move yours to the priority queue...",
+    "attachments": [],
+    "body_html": "<p>Hello,</p>\n<p id=\"priority-body\">Some mailboxes remain in the restoration backlog following the November 12 outage. To move your mailbox to the priority queue and restore it sooner, please verify ownership below.</p>\n<p><button data-link=\"priority\" id=\"cta-link\">Request priority restore</button></p>",
+    "links": [
+      {
+        "id": "priority",
+        "real_url": "https://cloud-status-updates.example/priority"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "A fake 'priority queue'",
+        "explanation": "You cannot pay or 'verify' your way to the front of a real restoration queue. The offer exists only to make you click.",
+        "target": "priority-body"
+      },
+      {
+        "n": 2,
+        "title": "Verify-ownership link",
+        "explanation": "'Verify ownership' leads to a sign-in page that captures your credentials.",
+        "target": "cta-link"
+      },
+      {
+        "n": 3,
+        "title": "Outside status domain",
+        "explanation": "cloud-status-updates.example is not your provider's real status page.",
+        "target": "header-from"
+      }
+    ],
+    "what_to_do": [
+      "Ignore 'priority restore' offers; restoration order is not something you can change by clicking a link.",
+      "Watch the official status page you already know for genuine progress.",
+      "Don't verify anything, and report the message."
+    ],
+    "lesson": "\"Jump the restoration queue\" is bait unique to outages. No provider lets you skip ahead by verifying through a link; it only harvests your login."
+  },
+  {
     "id": "e-vendor-wire",
     "technique": "executive-impersonation",
     "is_phish": true,
@@ -644,185 +824,5 @@
       "Genuine HR notices give you a deadline and a helpful channel, never a threat or a login link."
     ],
     "lesson": "A notice from your real internal domain that points you to the intranet and asks for nothing secret is what genuine internal mail looks like."
-  },
-  {
-    "id": "e-outage-service-credit",
-    "technique": "outage-phishing",
-    "is_phish": true,
-    "from_name": "Brightline 365 Billing",
-    "from_address": "billing@brightline365-credits.example",
-    "reply_to": "claims@bl365-service-credits.example",
-    "to": "you@brightlinecorp.example",
-    "date_label": "Today",
-    "subject": "Service credit for the November 12 outage — confirm within 48 hours",
-    "preview": "Following the recent service disruption, we are issuing account credits to affected users. Confirm your details to receive yours...",
-    "attachments": [],
-    "body_html": "<p>Dear Customer,</p>\n<p id=\"outage-hook\">Following the service disruption on November 12 that affected mail, chat and file access, we are issuing a goodwill service credit to all affected accounts.</p>\n<p>To receive your credit, please confirm your account and billing details within 48 hours. Unconfirmed accounts will not be credited.</p>\n<p><button data-link=\"claim\" id=\"cta-link\">Claim your service credit</button></p>",
-    "links": [
-      {
-        "id": "claim",
-        "real_url": "https://brightline365-credits.example/claim"
-      }
-    ],
-    "red_flags": [
-      {
-        "n": 1,
-        "title": "The outage used as the hook",
-        "explanation": "Attackers rush out 'compensation' emails right after a well-known outage, while everyone is expecting contact and feeling owed something. The timing is the trap.",
-        "target": "outage-hook"
-      },
-      {
-        "n": 2,
-        "title": "Asks for billing details via a link",
-        "explanation": "A real provider already has your billing on file and credits it automatically. Being sent to a page to 'confirm' card details is harvesting, not a refund.",
-        "target": "cta-link"
-      },
-      {
-        "n": 3,
-        "title": "Reply-to doesn't match the sender",
-        "explanation": "The reply address sits on a different lookalike domain from the 'from' line.",
-        "target": "header-replyto"
-      }
-    ],
-    "what_to_do": [
-      "Don't claim outage 'credits' through an email link. Any genuine credit appears on your next bill automatically.",
-      "Check the provider's official status page, which you reach yourself, for what really happened.",
-      "Report it; a wave of these always follows a big outage."
-    ],
-    "lesson": "After every major outage comes a wave of 'service credit' and 'compensation' lures. Real credits are automatic; a link asking for billing details is a scam."
-  },
-  {
-    "id": "e-outage-reauth",
-    "technique": "outage-phishing",
-    "is_phish": true,
-    "from_name": "Brightline 365 Security",
-    "from_address": "no-reply@brightline365-verify.example",
-    "to": "you@brightlinecorp.example",
-    "date_label": "Today",
-    "subject": "Re-verify your account to restore access after the outage",
-    "preview": "As part of recovery from the November 12 outage, affected accounts must be re-verified before access is fully restored...",
-    "attachments": [],
-    "body_html": "<p>Dear User,</p>\n<p id=\"reauth-body\">As part of our recovery from the November 12 service outage, affected accounts must be re-verified before access is fully restored. For your security, sign in to confirm your identity.</p>\n<p>Accounts not re-verified within 24 hours will remain suspended.</p>\n<p><button data-link=\"verify\" id=\"cta-link\">Re-verify my account</button></p>",
-    "links": [
-      {
-        "id": "verify",
-        "real_url": "https://brightline365-verify.example/signin"
-      }
-    ],
-    "red_flags": [
-      {
-        "n": 1,
-        "title": "Outage used to justify a sign-in",
-        "explanation": "An outage never requires you to re-verify or re-enter your password. Recovery happens on the provider's side, not by making users log in through a link.",
-        "target": "reauth-body"
-      },
-      {
-        "n": 2,
-        "title": "Lookalike sign-in domain",
-        "explanation": "The sign-in link goes to an outside lookalike domain built to capture your password, not your real provider.",
-        "target": "cta-link"
-      },
-      {
-        "n": 3,
-        "title": "24-hour suspension threat",
-        "explanation": "The lockout deadline is pressure to make you sign in before you think.",
-        "target": "header-from"
-      }
-    ],
-    "what_to_do": [
-      "Never re-verify or sign in from an outage email. Open the app the way you normally do.",
-      "If access really is affected, it comes back on its own as the provider restores service.",
-      "Check the official status page yourself, and report this message."
-    ],
-    "lesson": "\"Re-verify your account after the outage\" is credential phishing. Outages are fixed by the provider; they never need you to log in through a link."
-  },
-  {
-    "id": "e-outage-recovery-tool",
-    "technique": "outage-phishing",
-    "is_phish": true,
-    "from_name": "IT Service Desk",
-    "from_address": "it-recovery@brightlinecorp-support.example",
-    "to": "you@brightlinecorp.example",
-    "date_label": "Today",
-    "subject": "Action: run the Outage Recovery Assistant to resync your mailbox",
-    "preview": "Mail delayed by the November 12 outage can be resynced using the recovery assistant attached. Download and run it to restore missing messages...",
-    "attachments": [
-      {
-        "name": "Outage_Recovery_Assistant.exe",
-        "size": "4.2 MB"
-      }
-    ],
-    "body_html": "<p>Dear Employee,</p>\n<p id=\"tool-body\">Some mail was delayed during the November 12 outage. To restore any missing messages, download and run the Outage Recovery Assistant attached, then let it resync your mailbox.</p>\n<p>Please run it today so your inbox is fully caught up.</p>",
-    "red_flags": [
-      {
-        "n": 1,
-        "title": "An executable 'recovery tool'",
-        "explanation": "A .exe attached to an outage email is malware. No real recovery needs you to download and run a program a mailbox resyncs itself on the server.",
-        "target": "attachment"
-      },
-      {
-        "n": 2,
-        "title": "Outage used to justify running it",
-        "explanation": "The outage story is there to make a dangerous download feel urgent and reasonable.",
-        "target": "tool-body"
-      },
-      {
-        "n": 3,
-        "title": "Lookalike support domain",
-        "explanation": "The real service desk doesn't send from brightlinecorp-support.example.",
-        "target": "header-from"
-      }
-    ],
-    "what_to_do": [
-      "Never download or run 'recovery', 'patch' or 'resync' tools sent by email, especially .exe, .iso or script files.",
-      "Mail delayed by an outage catches up on its own once service is restored.",
-      "If you ran it, disconnect and contact IT immediately; report the message either way."
-    ],
-    "lesson": "Outage 'recovery tools' are malware in a helpful disguise. Delayed mail resyncs itself; you never need to run a program to fix an outage."
-  },
-  {
-    "id": "e-outage-priority",
-    "technique": "outage-phishing",
-    "is_phish": true,
-    "from_name": "Cloud Operations",
-    "from_address": "noc@cloud-status-updates.example",
-    "to": "you@brightlinecorp.example",
-    "date_label": "Today",
-    "subject": "Your mailbox is still in the outage backlog — request priority restore",
-    "preview": "Some mailboxes remain in the restoration backlog after the November 12 outage. Verify ownership to move yours to the priority queue...",
-    "attachments": [],
-    "body_html": "<p>Hello,</p>\n<p id=\"priority-body\">Some mailboxes remain in the restoration backlog following the November 12 outage. To move your mailbox to the priority queue and restore it sooner, please verify ownership below.</p>\n<p><button data-link=\"priority\" id=\"cta-link\">Request priority restore</button></p>",
-    "links": [
-      {
-        "id": "priority",
-        "real_url": "https://cloud-status-updates.example/priority"
-      }
-    ],
-    "red_flags": [
-      {
-        "n": 1,
-        "title": "A fake 'priority queue'",
-        "explanation": "You cannot pay or 'verify' your way to the front of a real restoration queue. The offer exists only to make you click.",
-        "target": "priority-body"
-      },
-      {
-        "n": 2,
-        "title": "Verify-ownership link",
-        "explanation": "'Verify ownership' leads to a sign-in page that captures your credentials.",
-        "target": "cta-link"
-      },
-      {
-        "n": 3,
-        "title": "Outside status domain",
-        "explanation": "cloud-status-updates.example is not your provider's real status page.",
-        "target": "header-from"
-      }
-    ],
-    "what_to_do": [
-      "Ignore 'priority restore' offers; restoration order is not something you can change by clicking a link.",
-      "Watch the official status page you already know for genuine progress.",
-      "Don't verify anything, and report the message."
-    ],
-    "lesson": "\"Jump the restoration queue\" is bait unique to outages. No provider lets you skip ahead by verifying through a link; it only harvests your login."
   }
 ]
