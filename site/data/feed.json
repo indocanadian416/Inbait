@@ -1,5 +1,18 @@
 [
   {
+    "id": "r-outage-lure",
+    "date": "2026-11-13",
+    "title": "Scammers are exploiting the Nov 12 cloud outage with fake 'service credit' and 're-verify' emails",
+    "summary": "After the major Nov 12 outage, opportunistic attackers are sending outage-themed lures: compensation claims, account re-verification, recovery tools and 'priority restore' offers. Real providers fix outages themselves; never sign in, run a tool, or enter billing details from an outage email.",
+    "category": "Email",
+    "severity": "high",
+    "technique": "outage-phishing",
+    "practice": {
+      "type": "email",
+      "id": "e-outage-service-credit"
+    }
+  },
+  {
     "id": "r-callback-phishing",
     "date": "2026-11-09",
     "title": "\"Call us to cancel this charge\" scams are getting people to dial the attacker",
