@@ -1,5 +1,126 @@
 [
   {
+    "id": "e-bell-incident-credit",
+    "technique": "outage-phishing",
+    "is_phish": true,
+    "from_name": "Bell Canada",
+    "from_address": "notice@bell-canada-securecare.example",
+    "reply_to": "support@bellcare-refunds.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Your account was affected by the November 17 security incident — claim your credit",
+    "preview": "As an affected customer, you qualify for a $75 goodwill credit and 2 years of free credit monitoring. Confirm your identity within 72 hours...",
+    "attachments": [],
+    "body_html": "<p>Dear Brightline Corp,</p>\n<p id=\"leaked-details\">We are writing about your Bell business account ending in <strong>2871</strong>. Our records show your last payment of <strong>$142.37</strong> on <strong>November 3</strong>.</p>\n<p>On November 17, an unauthorized party accessed an internal Bell system. As an affected customer, you qualify for a <strong>$75 goodwill credit</strong> and 2 years of free credit monitoring.</p>\n<p id=\"bank-ask\">To activate your credit, confirm your identity by entering the bank account or card on file and your 4-digit account PIN within 72 hours. Unclaimed credits expire.</p>\n<p><button data-link=\"claim\" id=\"cta-link\">Activate my credit and monitoring</button></p>\n<p class=\"small\">Bell Canada · Customer Protection Team</p>",
+    "links": [
+      {
+        "id": "claim",
+        "real_url": "https://bell-canada-securecare.example/activate?acct=2871"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "Your real details, used as 'proof'",
+        "explanation": "The breach exposed names, account numbers and the date and amount of the last payment. A message that quotes those back to you is not proving it's Bell; it may be proving the sender has the stolen data.",
+        "target": "leaked-details"
+      },
+      {
+        "n": 2,
+        "title": "Asks for banking details and your PIN",
+        "explanation": "Bell's own notice says it will never contact you to ask for bank account information, passwords or PINs. Any 'credit' that needs them is a scam.",
+        "target": "bank-ask"
+      },
+      {
+        "n": 3,
+        "title": "Lookalike sender and a different reply-to",
+        "explanation": "bell-canada-securecare.example is not Bell's domain, and replies go to yet another lookalike, bellcare-refunds.example.",
+        "target": "header-replyto"
+      }
+    ],
+    "what_to_do": [
+      "Don't click, and never enter banking details or a PIN to 'claim' a breach credit.",
+      "If you want to check, type Bell's address into your browser yourself or call the number on your bill.",
+      "Report the email; breach-themed lures spike right after a company announces an incident."
+    ],
+    "lesson": "After a breach, scammers use the leaked details themselves to look legitimate. Knowing your account number and last payment doesn't make a sender real, and no real company asks for your PIN."
+  },
+  {
+    "id": "e-bell-official-notice",
+    "technique": "outage-phishing",
+    "is_phish": false,
+    "from_name": "Bell",
+    "from_address": "noreply@bell.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Notice about a cybersecurity incident affecting some customer information",
+    "preview": "On November 17, there was unauthorized access to an internal Bell system. No credit card or bank account numbers were affected. There is nothing you need to do...",
+    "attachments": [],
+    "body_html": "<p>Dear customer,</p>\n<p>We're writing to let you know that on November 17, there was unauthorized access to an internal Bell system. We removed the unauthorized party, started our emergency protocols and are working with the RCMP.</p>\n<p>Some of your information may have been affected: your name, mailing address, phone number and email address, along with account details such as your account number, products, and the date and amount of your last payment. <strong>No credit card or bank account numbers were affected.</strong></p>\n<p>There is nothing you need to do. Please be careful with unexpected emails, texts or calls that claim to be from Bell. <strong>We will never contact you to ask for your banking information, passwords or PINs.</strong></p>\n<p>For security tips and updates, visit <button data-link=\"security\" id=\"security-link\">bell.example/security</button>, or type it into your browser yourself.</p>\n<p>Thank you,<br>Bell</p>",
+    "links": [
+      {
+        "id": "security",
+        "real_url": "https://bell.example/security"
+      }
+    ],
+    "safe_reasons": [
+      "Official Domain: Sent from the company's real domain (bell.example), and the only link points to that same domain.",
+      "Nothing Requested: It asks for no login, payment, PIN or reply, and says plainly there is nothing you need to do.",
+      "Warns You About Scams: It tells you what the company will never ask for, which is exactly what the fake versions demand."
+    ],
+    "what_to_do": [
+      "This is safe to read. There's nothing to click or confirm.",
+      "Keep its key promise in mind: Bell will never ask for your banking information, passwords or PINs.",
+      "Watch your account for anything unusual and treat follow-up 'Bell' messages that want something from you with suspicion."
+    ],
+    "lesson": "A genuine breach notice explains what happened, says what was and wasn't exposed, asks you for nothing and points you to the company's real site. Anything that adds a link to 'verify' or 'claim' is the scam riding on it."
+  },
+  {
+    "id": "e-bell-mybell-reset",
+    "technique": "outage-phishing",
+    "is_phish": true,
+    "from_name": "MyBell Security",
+    "from_address": "security@mybell-account-protect.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Action required: reset your MyBell password within 24 hours",
+    "preview": "As a precaution following the recent security incident, all MyBell passwords must be reset. Accounts not reset will be temporarily locked...",
+    "attachments": [],
+    "body_html": "<p>Hello,</p>\n<p id=\"reset-body\">As a precaution following the recent security incident, all MyBell passwords must be reset within <strong>24 hours</strong>. Accounts that are not reset will be temporarily locked to protect your services.</p>\n<p>Sign in with your current password below to choose a new one.</p>\n<p><button data-link=\"reset\" id=\"cta-link\">Reset my MyBell password</button></p>\n<p class=\"small\">Bell Canada · Security Operations · Ref BCE-IR-1117</p>",
+    "links": [
+      {
+        "id": "reset",
+        "real_url": "https://mybell-account-protect.example/login?ref=BCE-IR-1117"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "A forced reset the real notice never asked for",
+        "explanation": "Bell's notice says there is nothing you need to do, and passwords weren't among the exposed data. A 24-hour reset with a lock-out threat is pressure, not protection.",
+        "target": "reset-body"
+      },
+      {
+        "n": 2,
+        "title": "'Sign in with your current password'",
+        "explanation": "The button opens a lookalike login page. Typing your current password there hands it straight to the attacker.",
+        "target": "cta-link"
+      },
+      {
+        "n": 3,
+        "title": "Not Bell's domain",
+        "explanation": "mybell-account-protect.example only borrows the MyBell name. The official reference number in the footer is there to make it look real.",
+        "target": "header-from"
+      }
+    ],
+    "what_to_do": [
+      "Don't sign in through the email. If you want to change your password, open the MyBell app or type the address yourself.",
+      "If you already entered your password, change it right away through the real site and anywhere else you reuse it.",
+      "Report the email so others get warned."
+    ],
+    "lesson": "Breach news is the perfect cover for a fake 'reset your password' email. Real changes happen in the app or site you open yourself, never through a login link with a countdown."
+  },
+  {
     "id": "e-outage-service-credit",
     "technique": "outage-phishing",
     "is_phish": true,
