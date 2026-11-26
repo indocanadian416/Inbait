@@ -1,5 +1,242 @@
 [
   {
+    "id": "e-fake-ai-assistant",
+    "technique": "fake-updates",
+    "is_phish": true,
+    "from_name": "Quill AI for Business",
+    "from_address": "onboarding@quill-ai-desktop.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Your free Quill AI Business seat is ready — install the desktop assistant",
+    "preview": "Your team has been granted early access to Quill AI Desktop: automatic estimates, invoices and scheduling. Install today to keep your seat...",
+    "attachments": [],
+    "body_html": "<p>Hi you@brightlinecorp.example,</p>\n<p id=\"ai-offer\">Good news: your company qualifies for a <strong>free Quill AI Business seat</strong>. The new desktop assistant writes estimates, invoices and schedules for you, and summarizes every meeting automatically.</p>\n<p id=\"seat-deadline\">Early-access seats are limited. Install within <strong>48 hours</strong> or your seat will be released to another business.</p>\n<p><button data-link=\"download\" id=\"cta-link\">Download QuillAI_Desktop_Setup.exe</button></p>\n<p class=\"small\" id=\"av-note\">If your antivirus warns you, choose \"Run anyway\". Our installer is new and not yet recognized by all security tools.</p>\n<p class=\"small\">Quill AI · Business Onboarding</p>",
+    "links": [
+      {
+        "id": "download",
+        "real_url": "https://quill-ai-desktop.example/download/QuillAI_Desktop_Setup.exe"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "A popular AI tool used as the bait",
+        "explanation": "Fake AI apps are one of the fastest-growing lures against small businesses in 2026. A 'free seat' for a tool nobody at your company ordered is a classic way to get malware installed.",
+        "target": "ai-offer"
+      },
+      {
+        "n": 2,
+        "title": "An installer straight from an email",
+        "explanation": "Real software is installed from the vendor's official site or your IT team's approved catalog, not from a download button in an unsolicited email. Fake installers often carry Trojans or infostealers.",
+        "target": "cta-link"
+      },
+      {
+        "n": 3,
+        "title": "Told to ignore your antivirus",
+        "explanation": "No legitimate company asks you to click 'Run anyway' past a security warning. That line exists because the file is expected to be blocked.",
+        "target": "av-note"
+      },
+      {
+        "n": 4,
+        "title": "A countdown on a 'free' gift",
+        "explanation": "The 48-hour seat deadline is there to rush you past the question of whether anyone at work actually asked for this.",
+        "target": "seat-deadline"
+      }
+    ],
+    "what_to_do": [
+      "Don't download or run it. Ask IT which AI tools are approved, and install only from the official source they give you.",
+      "If you already ran the installer, disconnect from the network and tell IT right away.",
+      "Report the email; fake AI-tool lures are being sent to many businesses at once."
+    ],
+    "lesson": "Attackers dress malware up as the AI tools everyone wants to try. Get AI apps only through your IT team or the vendor's real site, and never click past a security warning to install one."
+  },
+  {
+    "id": "e-page-violation-appeal",
+    "technique": "credential-harvesting",
+    "is_phish": true,
+    "from_name": "Linkora Business Support",
+    "from_address": "policy-review@linkora-business-help.example",
+    "reply_to": "appeals@lnkr-meta-review.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Your Business Page has been restricted — appeal code LKR-7741-BX",
+    "preview": "Your page Brightline Corp was flagged for violating our advertising policies. Submit your appeal within 24 hours to avoid permanent removal...",
+    "attachments": [],
+    "body_html": "<p>Hello you@brightlinecorp.example,</p>\n<p id=\"violation-body\">Your Business Page <strong>Brightline Corp</strong> was flagged for violating our Advertising and Intellectual Property policies. Ads have been paused and the page will be <strong>permanently removed in 24 hours</strong> unless you appeal.</p>\n<p id=\"appeal-code\">Your appeal has been pre-registered. Appeal code: <strong>LKR-7741-BX</strong>. Case status: <em>Under review, priority</em>.</p>\n<p>To complete your appeal, verify you are the page owner by signing in with your Linkora account and confirming your two-factor code.</p>\n<p><button data-link=\"appeal\" id=\"cta-link\">Submit appeal</button></p>\n<p class=\"small\">Linkora Business Integrity Team</p>",
+    "links": [
+      {
+        "id": "appeal",
+        "real_url": "https://linkora-business-help.example/appeal?code=LKR-7741-BX"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "Threat of losing your business page",
+        "explanation": "A 24-hour removal warning targets exactly what a small business can't afford to lose: its page, ads and customers. Fear makes people sign in without checking.",
+        "target": "violation-body"
+      },
+      {
+        "n": 2,
+        "title": "A fake 'appeal code' to calm you down",
+        "explanation": "Invented case numbers and an 'under review' status make it look official and reassure you the process is real. Anyone can type a reference number into an email.",
+        "target": "appeal-code"
+      },
+      {
+        "n": 3,
+        "title": "Your email address pasted in",
+        "explanation": "Greeting you by your own email address feels routine, but it's just copied from the 'To' line. It proves nothing about who sent it.",
+        "target": "header-from"
+      },
+      {
+        "n": 4,
+        "title": "Asks for your password and two-factor code",
+        "explanation": "The button opens a lookalike sign-in page. Handing over the 2FA code lets the attacker take over the page and its ad account on the spot. Replies also go to a different lookalike domain.",
+        "target": "cta-link"
+      }
+    ],
+    "what_to_do": [
+      "Don't sign in from the email. Open the platform's app or type its address yourself and check your page's account status there.",
+      "Never share a two-factor code with anyone, including a 'support' or 'appeals' team.",
+      "Report the message to the platform and your IT team."
+    ],
+    "lesson": "Fake policy-violation notices use fear of losing your business page, plus a made-up appeal code to look official. Real account warnings show up inside the platform itself, and no real appeal needs your 2FA code."
+  },
+  {
+    "id": "e-business-loan-offer",
+    "technique": "lookalike-domains",
+    "is_phish": true,
+    "from_name": "Northbay Business Bank",
+    "from_address": "growth@northbay-bussiness-bank.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Brightline Corp: you're pre-approved for a $150,000 business line of credit",
+    "preview": "No credit check, funds in 24 hours. Complete your secure application to lock in 2.9% before the offer closes Friday...",
+    "attachments": [],
+    "body_html": "<p>Dear Business Owner,</p>\n<p id=\"loan-offer\">Congratulations! Brightline Corp has been <strong>pre-approved for a $150,000 business line of credit</strong> at an introductory rate of <strong>2.9%</strong>. No credit check, no paperwork, funds deposited in 24 hours.</p>\n<p id=\"data-ask\">To release the funds, complete our secure application with your business number, your owner's date of birth and SIN, your current bank's online banking login, and photos of your driver's licence.</p>\n<p><button data-link=\"apply\" id=\"cta-link\">Complete secure application</button></p>\n<p class=\"small\">Offer closes Friday. Northbay Business Bank, Member of a deposit insurance program.</p>",
+    "links": [
+      {
+        "id": "apply",
+        "real_url": "https://northbay-bussiness-bank.example/apply?ref=brightline"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "Too good to be true",
+        "explanation": "Pre-approval you never applied for, no credit check, a rate far below market and money in 24 hours. Fake banks use business finance offers to get owners to hand over personal and company data.",
+        "target": "loan-offer"
+      },
+      {
+        "n": 2,
+        "title": "Asks for identity documents and another bank's login",
+        "explanation": "No lender needs your online banking password for a different bank. SIN, date of birth and ID photos are everything a criminal needs for identity theft or to open accounts in your company's name.",
+        "target": "data-ask"
+      },
+      {
+        "n": 3,
+        "title": "A misspelled domain",
+        "explanation": "Look closely: northbay-bussiness-bank.example spells 'business' with a double 's'. One extra letter is all it takes to build a convincing fake bank site.",
+        "target": "header-from"
+      }
+    ],
+    "what_to_do": [
+      "Don't apply through the link. If you're curious, find the bank yourself and call a number from its official site.",
+      "Never share your SIN, ID photos or any bank login in response to an unsolicited offer.",
+      "If you already entered details, call your real bank, change your banking password and watch for new accounts opened in your name."
+    ],
+    "lesson": "Fake banks lure business owners with easy credit to collect identity and banking details, which are used directly or sold. Real lenders don't pre-approve you out of nowhere or ask for another bank's login."
+  },
+  {
+    "id": "e-rfq-trojan",
+    "technique": "malicious-attachments",
+    "is_phish": true,
+    "from_name": "Daniel Okafor, Procurement",
+    "from_address": "d.okafor@harbourline-industrial.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Request for Quote RFQ-11826 — 4,000 units, reply by Monday",
+    "preview": "We are sourcing a new supplier and your company was recommended. Please review the attached specifications and send us your best price...",
+    "attachments": [
+      {
+        "name": "RFQ-11826_Specifications_and_Drawings.pdf.lnk",
+        "size": "2.1 KB"
+      }
+    ],
+    "body_html": "<p>Good morning,</p>\n<p id=\"rfq-body\">Harbourline Industrial is sourcing a new supplier for a <strong>4,000-unit order</strong> starting in Q1, and your company was recommended to us. Please review the attached specifications and drawings and send your best unit price by Monday.</p>\n<p id=\"open-instructions\">The file is protected for confidentiality. If it does not open in your PDF viewer, double-click it and select <strong>Open</strong> when Windows asks.</p>\n<p>We look forward to working with you.</p>\n<p>Daniel Okafor<br>Procurement Manager, Harbourline Industrial<br>555-0147</p>",
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "A double extension on the attachment",
+        "explanation": "The file ends in .pdf.lnk. It's a Windows shortcut pretending to be a PDF, and opening it runs a hidden command that downloads a Trojan. Real documents don't need a second extension.",
+        "target": "attachment"
+      },
+      {
+        "n": 2,
+        "title": "Instructions to get past the warning",
+        "explanation": "A real specification sheet opens normally. Telling you to double-click and choose 'Open' at the Windows prompt is coaching you through the security check.",
+        "target": "open-instructions"
+      },
+      {
+        "n": 3,
+        "title": "A big order from a stranger",
+        "explanation": "Quote requests are everyday business mail, which is why attackers use them. A large, urgent order from a company you've never dealt with is designed to make you open the file fast.",
+        "target": "rfq-body"
+      }
+    ],
+    "what_to_do": [
+      "Don't open the attachment. Check the file's full name and type before opening anything from a new contact.",
+      "Look the company up yourself and call them to confirm the request is real.",
+      "Forward the email to IT or your security team so they can check the file safely."
+    ],
+    "lesson": "A fake request for a quote is a favourite way to slip malware to small businesses, because replying to quotes is normal work. Check attachment names closely and never open a file that asks you to bypass a warning."
+  },
+  {
+    "id": "e-meeting-docs-invite",
+    "technique": "shared-file-phishing",
+    "is_phish": true,
+    "from_name": "Convene Docs",
+    "from_address": "no-reply@convene-docs.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "Today",
+    "subject": "Priya Raman invited you to \"Q1 Partnership Agenda\" in Convene Docs",
+    "preview": "Priya Raman shared a meeting document with you ahead of tomorrow's call. View the agenda and confirm your attendance...",
+    "attachments": [],
+    "body_html": "<p>Hi you@brightlinecorp.example,</p>\n<p id=\"invite-body\"><strong>Priya Raman</strong> invited you to view the meeting document <strong>Q1 Partnership Agenda</strong> ahead of tomorrow's 10:00 call.</p>\n<p><button data-link=\"view\" id=\"cta-link\">View document</button></p>\n<p id=\"doc-preview\" class=\"small\">Inside the document: \"This agenda is secured. Click <em>Access secure file</em> and sign in with your work email to continue.\"</p>\n<p class=\"small\">Convene Docs · You received this because someone shared a document with you.</p>",
+    "links": [
+      {
+        "id": "view",
+        "real_url": "https://convene-docs.example/d/q1-agenda-7f3k"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "A real platform used as a stepping stone",
+        "explanation": "The email and first link really do come from a legitimate document service, so it passes email filters and looks trustworthy. The trap is one click deeper.",
+        "target": "header-from"
+      },
+      {
+        "n": 2,
+        "title": "A document that only holds another link",
+        "explanation": "A genuine agenda contains the agenda. A 'secured' file whose only content is a button to sign in somewhere else is a redirect to a fake login page.",
+        "target": "doc-preview"
+      },
+      {
+        "n": 3,
+        "title": "An unknown sender and a meeting you don't have",
+        "explanation": "Check your calendar: there's no 10:00 call with a Priya Raman. Attackers use names that sound plausible and a short deadline so you click before checking.",
+        "target": "invite-body"
+      }
+    ],
+    "what_to_do": [
+      "Check your own calendar and ask the supposed sender through a channel you already use before opening the document.",
+      "If a shared document sends you to a sign-in page, stop. Only sign in from your company's usual login page that you open yourself.",
+      "Report the email, and the hosted document to the platform, so it can be taken down."
+    ],
+    "lesson": "Attackers hide phishing pages behind real file-sharing and meeting platforms so the first link looks safe. What matters is where the second click takes you: if a shared file asks you to sign in somewhere new, it's a trap."
+  },
+  {
     "id": "e-bell-incident-credit",
     "technique": "outage-phishing",
     "is_phish": true,
