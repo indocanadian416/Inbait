@@ -1,5 +1,238 @@
 [
   {
+    "id": "e-goodguys-accenture-interview",
+    "technique": "credential-harvesting",
+    "is_phish": true,
+    "from_name": "Accenture Research Panel",
+    "from_address": "panel@accenture-interview-experts.example",
+    "reply_to": "noreply@em4821.mailrelay-send.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "26 Nov 2026",
+    "subject": "Paid expert interview: $600 for 45 minutes on your industry experience",
+    "preview": "Accenture is speaking with experienced professionals for a confidential research project. Selected experts receive a $600 honorarium...",
+    "attachments": [],
+    "body_html": "<p>Hello,</p>\n<p id=\"pay-offer\">Accenture is conducting confidential research with experienced professionals in your field. Based on your background, you have been selected for a <strong>45-minute paid expert interview</strong> with a <strong>$600 honorarium</strong>, paid within 5 business days.</p>\n<p id=\"work-only\">To confirm your eligibility, validate your invitation by signing in with your <strong>work Google account</strong>. Personal addresses (Gmail, Yahoo, Outlook) cannot be accepted for compliance reasons.</p>\n<p><button data-link=\"validate\" id=\"cta-link\">Validate my invitation</button></p>\n<p class=\"small\">Spots are limited and are allocated on a first-come basis. Accenture Expert Research Program</p>",
+    "links": [
+      {
+        "id": "validate",
+        "real_url": "https://click.mailrelay-send.example/ls/click?upn=u001.Kx9"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "Easy money out of nowhere",
+        "explanation": "$600 for 45 minutes, offered to someone who never applied, is the hook of the real GoodGuys campaign. Flattery ('you have been selected') and money make people click before they think.",
+        "target": "pay-offer"
+      },
+      {
+        "n": 2,
+        "title": "Work accounts only",
+        "explanation": "A survey or interview has no reason to need your work sign-in. GoodGuys pages reject Gmail, Yahoo and Outlook because the attackers want corporate accounts, which open the door to company email, files and systems.",
+        "target": "work-only"
+      },
+      {
+        "n": 3,
+        "title": "Not Accenture's domain, routed through a mail tracker",
+        "explanation": "accenture-interview-experts.example only borrows the name. The link first passes through a bulk-email click tracker, a trick that helps it slip past email filters.",
+        "target": "header-from"
+      }
+    ],
+    "what_to_do": [
+      "Don't sign in. No real research interview needs your work Google or Okta password.",
+      "If an offer seems interesting, find the company's real website yourself and contact them there.",
+      "Report the email. If you already signed in, change your password and tell IT right away, even if you approved an MFA prompt."
+    ],
+    "lesson": "GoodGuys uses paid interviews from famous brands to steal work sign-ins. When an unexpected offer of money ends at a Google or Okta login page, it's a phish."
+  },
+  {
+    "id": "e-goodguys-nvidia-study",
+    "technique": "fake-login",
+    "is_phish": true,
+    "from_name": "NVIDIA AI Research",
+    "from_address": "studies@nvidia-feedback-study.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "26 Nov 2026",
+    "subject": "Invitation: NVIDIA AI Experience & Feedback Study ($500 reward)",
+    "preview": "Share how your team uses AI tools in a short session and receive $500. Complete the quick verification to reserve your slot...",
+    "attachments": [],
+    "body_html": "<p>Hi you@brightlinecorp.example,</p>\n<p>NVIDIA is inviting professionals to take part in the <strong>AI Experience &amp; Feedback Study</strong>. Tell us how your team uses AI tools in a short online session and receive a <strong>$500 reward</strong>.</p>\n<p id=\"captcha-step\">To keep the study secure, you will complete a quick \"I'm not a robot\" check, enter your name, work email and mobile number, and then sign in with Google to reserve your slot.</p>\n<p><button data-link=\"join\" id=\"cta-link\">Reserve my slot</button></p>\n<p class=\"small\">NVIDIA Research Participation · You received this because your profile matched our study criteria.</p>",
+    "links": [
+      {
+        "id": "join",
+        "real_url": "https://nvidia-feedback-study.example/researchparticipation?sid=1764210004-k3x9q2"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "A captcha in front of a sign-in",
+        "explanation": "The 'I'm not a robot' check isn't for your safety. In GoodGuys it keeps security scanners from seeing the fake page behind it, and makes the whole flow feel more official.",
+        "target": "captcha-step"
+      },
+      {
+        "n": 2,
+        "title": "Collects your phone number, then your login",
+        "explanation": "Name, work email and mobile number come first, then a Google sign-in on a non-Google site. That's everything an attacker needs to log in as you and handle the MFA prompts.",
+        "target": "cta-link"
+      },
+      {
+        "n": 3,
+        "title": "A lookalike research domain",
+        "explanation": "nvidia-feedback-study.example mixes a brand name with research words, the same naming pattern Push Security found across GoodGuys landing sites. NVIDIA's real domain is not this.",
+        "target": "header-from"
+      }
+    ],
+    "what_to_do": [
+      "Never sign in to Google from a page that isn't Google's own address (accounts.google.com).",
+      "Treat any unexpected 'study', 'panel' or 'feedback session' that ends at a login page as phishing.",
+      "Report the email to your security team."
+    ],
+    "lesson": "Fake feedback studies use a captcha, a few harmless-looking questions and then a cloned Google sign-in. A real study never needs your work password."
+  },
+  {
+    "id": "e-goodguys-google-cloud-webinar",
+    "technique": "fake-login",
+    "is_phish": true,
+    "from_name": "Google Cloud Events via HireVue",
+    "from_address": "invitations@hirevue-notify.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "26 Nov 2026",
+    "subject": "You're invited: Moving AI applications into production — Google Cloud live session",
+    "preview": "Join Google Cloud engineers for a live session on taking AI apps from prototype to production. Registered attendees receive a participation stipend...",
+    "attachments": [],
+    "body_html": "<p>Hello,</p>\n<p id=\"platform-note\">You've been invited through HireVue to a private <strong>Google Cloud</strong> live session: <strong>Moving AI applications into production</strong>. Registered attendees receive a participation stipend for sharing feedback after the session.</p>\n<p><button data-link=\"register\" id=\"cta-link\">Register for the session</button></p>\n<p id=\"unusual-traffic\" class=\"small\">After clicking, you may see a page saying \"Our systems have detected unusual traffic from your network.\" Complete the check and sign in with your work Google account to confirm your seat.</p>\n<p class=\"small\">Google Cloud Events</p>",
+    "links": [
+      {
+        "id": "register",
+        "real_url": "https://googlecloud-webinar-access.example/session?seat=AI-PROD-1118"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "A real hiring platform used as the sender",
+        "explanation": "The GoodGuys Google Cloud lure was really sent through HireVue, a legitimate interview platform, so it passes sender checks. A trusted platform in the 'from' line doesn't make the invitation genuine.",
+        "target": "platform-note"
+      },
+      {
+        "n": 2,
+        "title": "A fake 'unusual traffic' warning",
+        "explanation": "This skin copies Google's real 'unusual traffic' page so the fake sign-in that follows feels like Google. Being warned in advance that you'll see it is a giveaway.",
+        "target": "unusual-traffic"
+      },
+      {
+        "n": 3,
+        "title": "Google sign-in on a non-Google domain",
+        "explanation": "googlecloud-webinar-access.example is not google.com. A genuine Google event registers you on Google's own site and never asks for your password on another domain.",
+        "target": "cta-link"
+      }
+    ],
+    "what_to_do": [
+      "Find vendor webinars on the vendor's official events page yourself, not through an emailed invitation.",
+      "Check the address bar before any Google sign-in: it should be accounts.google.com.",
+      "Report the invitation, and mention the platform it came through so it can be reported to them too."
+    ],
+    "lesson": "Attackers send fake webinars through real platforms to get past filters, then copy Google's own screens. Always check where the sign-in page actually lives."
+  },
+  {
+    "id": "e-goodguys-spacex-briefing",
+    "technique": "credential-harvesting",
+    "is_phish": true,
+    "from_name": "SpaceX Partner Programs",
+    "from_address": "briefings@spacex-starship-briefing.example",
+    "reply_to": "events@cvent-mailer-links.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "26 Nov 2026",
+    "subject": "Private invitation: Starship Product Briefing — attendee rewards included",
+    "preview": "You are invited to an exclusive Starship Product Briefing. Attendees receive Grok Heavy access and an allocation of SpaceX shares...",
+    "attachments": [],
+    "body_html": "<p>Dear Professional,</p>\n<p id=\"reward-offer\">You have been personally selected for an exclusive <strong>Starship Product Briefing</strong>. As a thank-you, attendees receive <strong>Grok Heavy access</strong> and an allocation of <strong>SpaceX shares</strong>.</p>\n<p id=\"seat-pressure\">Only 40 seats remain. Confirm your attendance with your work account within 12 hours to secure your rewards.</p>\n<p><button data-link=\"confirm\" id=\"cta-link\">Confirm my attendance</button></p>\n<p class=\"small\">SpaceX · Partner and Investor Relations</p>",
+    "links": [
+      {
+        "id": "confirm",
+        "real_url": "https://events.cvent-mailer-links.example/c/8823"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "Rewards that are far too good",
+        "explanation": "Shares in a private company and premium AI access just for attending a briefing? No real company hands out equity to strangers. The GoodGuys SpaceX lure used exactly these rewards.",
+        "target": "reward-offer"
+      },
+      {
+        "n": 2,
+        "title": "Scarcity and a short deadline",
+        "explanation": "'Only 40 seats' and '12 hours' are there to make you act before you ask why you were picked.",
+        "target": "seat-pressure"
+      },
+      {
+        "n": 3,
+        "title": "Lookalike sender and an event-platform redirect",
+        "explanation": "The sender borrows SpaceX's name on a lookalike domain, and the link bounces through an event-mailing tracker before landing on the fake sign-in.",
+        "target": "header-replyto"
+      }
+    ],
+    "what_to_do": [
+      "Don't confirm. Unsolicited offers of shares or rewards for attending an event are scams.",
+      "Never use your work account to sign in to something an outside company emailed you about.",
+      "Report the email so your security team can block the domains."
+    ],
+    "lesson": "The bigger the brand and the reward, the harder the hook. Exclusive invitations with shares or prizes that end at a sign-in page are credential theft."
+  },
+  {
+    "id": "e-goodguys-spotify-okta",
+    "technique": "mfa-fatigue",
+    "is_phish": true,
+    "from_name": "Spotify Listener Insights",
+    "from_address": "insights@spotify-interview-experts.example",
+    "to": "you@brightlinecorp.example",
+    "date_label": "26 Nov 2026",
+    "subject": "Your paid interview is confirmed — approve the sign-in on your phone",
+    "preview": "Thanks for registering for the Spotify listener interview. To finish, sign in with your company Okta account and approve the push or enter the code we send...",
+    "attachments": [],
+    "body_html": "<p>Hi you@brightlinecorp.example,</p>\n<p>Thanks for your interest in the Spotify paid listener interview ($450, 40 minutes). Your spot is almost confirmed.</p>\n<p id=\"okta-step\">To finish, sign in with your <strong>company Okta account</strong> below.</p>\n<p id=\"mfa-ask\">You will then receive an <strong>Okta Verify push</strong> or a text message with a code. Approve the push or enter the code on our page to complete verification. If you see several requests, simply approve the latest one.</p>\n<p><button data-link=\"okta\" id=\"cta-link\">Sign in with Okta</button></p>\n<p class=\"small\">Spotify Research · Listener Insights Team</p>",
+    "links": [
+      {
+        "id": "okta",
+        "real_url": "https://spotify-interview-experts.example/okta/login?sid=1764211988-p7f2m"
+      }
+    ],
+    "red_flags": [
+      {
+        "n": 1,
+        "title": "Your company login for someone else's interview",
+        "explanation": "Spotify has no reason to need your employer's Okta account. A page that asks for it is collecting the keys to your company.",
+        "target": "okta-step"
+      },
+      {
+        "n": 2,
+        "title": "Told to approve MFA prompts",
+        "explanation": "In GoodGuys, the attacker types your stolen password into the real Okta sign-in. The push or code you receive is for their login. Approving it, or typing the code on their page, lets them in.",
+        "target": "mfa-ask"
+      },
+      {
+        "n": 3,
+        "title": "'Approve the latest one'",
+        "explanation": "Several prompts in a row means someone else is trying to sign in as you. Real services never ask you to approve a request you didn't start yourself.",
+        "target": "mfa-ask"
+      },
+      {
+        "n": 4,
+        "title": "A fake Okta page on a lookalike domain",
+        "explanation": "Your company's real Okta sign-in lives on its own Okta address, not on spotify-interview-experts.example.",
+        "target": "cta-link"
+      }
+    ],
+    "what_to_do": [
+      "Never approve an MFA push or share a code for a sign-in you didn't start yourself.",
+      "If you get unexpected prompts, deny them and report it to IT immediately; your password is likely compromised.",
+      "Sign in to work systems only from your company's usual login page that you open yourself."
+    ],
+    "lesson": "Stealing your password is only half of GoodGuys. The attackers also need you to approve the MFA prompt their login triggers. If you didn't start the sign-in, deny it and report it."
+  },
+  {
     "id": "e-fake-ai-assistant",
     "technique": "fake-updates",
     "is_phish": true,
